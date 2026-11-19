@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "thumb": "1.jpg",
+        "delay": "100",
+        "title": "Pizzas",
+        "text": "Pizzas artesanales de masa de fermentación lenta, a elección entre nuestros sabores.",
+        "tags": [
+            "Pizzas"
+        ],
+        "price": 405,
+        "icon": "fa fa-heart",
+        "category": [
+            "pizzas"
+        ],
+        "description": [
+            "Nuestro clásico para eventos: pizzas artesanales hechas con masa de fermentación lenta, que estiramos y horneamos a la leña en el lugar de tu evento. El resultado es una masa liviana, aireada y con bordes crocantes.",
+            "Vamos sirviendo las pizzas recién salidas del horno durante todo el servicio, combinando sabores entre nuestras variedades: desde la mozzarella y la 4 quesos hasta opciones como cebolla asada y miel, pesto de albahaca y nuez, o mortadela, parmesano y rúcula. Contamos con pizzas para celíacos."
+        ]
+    },
+    {
+        "id": 2,
+        "thumb": "2.jpg",
+        "delay": "200",
+        "title": "Pizzas + Calzones",
+        "text": "Combo de pizzas y calzones horneados a la leña.",
+        "tags": [
+            "Pizzas",
+            "Calzones"
+        ],
+        "price": 445,
+        "icon": "fa fa-heart",
+        "category": [
+            "pizzas"
+        ],
+        "description": [
+            "A nuestras pizzas a la leña les sumamos calzones: la misma masa de fermentación lenta, rellena, cerrada y horneada hasta quedar bien dorada. Una opción más contundente que le da variedad a la mesa.",
+            "Pizzas y calzones se preparan con nuestros sabores de siempre (mozzarella, 4 quesos, roquefort y bondiola, panceta y barbacoa, entre otros), así tus invitados pueden ir probando de todo a lo largo del servicio. Contamos con opciones para celíacos."
+        ]
+    },
+    {
+        "id": 3,
+        "thumb": "3.jpg",
+        "delay": "300",
+        "title": "Pizzas + Papas y Boniatos",
+        "text": "Pizzas acompañadas de papas y boniatos caseros en cuña.",
+        "tags": [
+            "Pizzas",
+            "Papas y Boniatos"
+        ],
+        "price": 525,
+        "icon": "fa fa-heart",
+        "category": [
+            "pizzas"
+        ],
+        "description": [
+            "Pizzas artesanales a la leña acompañadas de papas y boniatos caseros cortados en cuña. Una combinación simple que siempre funciona, ideal para eventos con grandes y chicos.",
+            "Las papas y boniatos se cocinan en el momento y se sirven calentitos junto a las pizzas, que van saliendo del horno durante todo el servicio. Contamos con pizzas para celíacos."
+        ]
+    },
+    {
+        "id": 4,
+        "thumb": "4.jpg",
+        "delay": "400",
+        "title": "Chivitos + Papas y Boniatos",
+        "text": "Chivitos completos con papas y boniatos caseros.",
+        "tags": [
+            "Chivitos",
+            "Papas y Boniatos"
+        ],
+        "price": 595,
+        "icon": "fa fa-heart",
+        "category": [
+            "chivitos"
+        ],
+        "description": [
+            "El chivito uruguayo, a nuestra manera: pan catalán, carne de lomo, mix de verdes, tomates secos, cebolla, mozzarella, mortadela, panceta, huevo frito y alioli de remolacha.",
+            "Los armamos al momento en el lugar de tu evento y los servimos con papas y boniatos caseros en cuña. Si tenés invitados que no comen carne, contamos con chivitos vegetarianos."
+        ]
+    },
+    {
+        "id": 5,
+        "thumb": "5.jpg",
+        "delay": "100",
+        "title": "Pizzas + Gramajo",
+        "text": "Pizzas acompañadas de nuestro gramajo casero.",
+        "tags": [
+            "Pizzas",
+            "Gramajo"
+        ],
+        "price": 625,
+        "icon": "fa fa-heart",
+        "category": [
+            "pizzas"
+        ],
+        "description": [
+            "Pizzas artesanales a la leña junto a nuestro gramajo casero: papas y boniatos, cebolla, panceta, jamón, mozzarella, perejil y huevo, salteados en el momento.",
+            "Una propuesta abundante, que combina lo mejor del horno con un plato bien casero. Ideal para eventos donde querés que nadie se quede con hambre. Contamos con pizzas para celíacos."
+        ]
+    },
+    {
+        "id": 6,
+        "thumb": "6.jpg",
+        "delay": "200",
+        "title": "Pizzas + Tacos y Quesadillas",
+        "text": "Pizzas junto a tacos y quesadillas Piccolo.",
+        "tags": [
+            "Pizzas",
+            "Tacos y Quesadillas"
+        ],
+        "price": 645,
+        "icon": "fa fa-heart",
+        "category": [
+            "pizzas"
+        ],
+        "description": [
+            "Una combinación distinta para tu evento: pizzas a la leña junto a tacos y quesadillas Piccolo. Los tacos pueden ser de carne, pollo, cerdo o champignon, a elección.",
+            "Nuestras quesadillas llevan queso, tomate, chorizos y cebolla. Todo se prepara sin picante, y ofrecemos salsa Tabasco aparte para quien quiera sumarle un toque. Contamos con pizzas para celíacos."
+        ]
+    },
+    {
+        "id": 7,
+        "thumb": "7.jpg",
+        "delay": "300",
+        "title": "Picada de Asado + Pizza o Gramajo",
+        "text": "Picada de asado con chorizos y bondiola, a elección con pizza o gramajo.",
+        "tags": [
+            "Picada de Asado",
+            "Pizza o Gramajo"
+        ],
+        "price": 645,
+        "icon": "fa fa-heart",
+        "category": [
+            "asado"
+        ],
+        "description": [
+            "Para los que no se pierden un buen asado: picada de chorizos, bondiola de cerdo y colita de cuadril a la parrilla, acompañada de pan casero, salsa criolla, chimichurri y mayonesa.",
+            "La completás a elección con pizzas a la leña o con nuestro gramajo casero, para tener una mesa variada y bien abundante durante todo el servicio."
+        ]
+    },
+    {
+        "id": 8,
+        "thumb": "8.jpg",
+        "delay": "400",
+        "title": "Chivitos + Pizzas o Gramajo",
+        "text": "Chivitos completos a elección con pizza o gramajo.",
+        "tags": [
+            "Chivitos",
+            "Pizza o Gramajo"
+        ],
+        "price": 645,
+        "icon": "fa fa-heart",
+        "category": [
+            "chivitos"
+        ],
+        "description": [
+            "Chivitos completos armados en el momento (pan catalán, carne de lomo, mix de verdes, tomates secos, cebolla, mozzarella, mortadela, panceta, huevo frito y alioli de remolacha).",
+            "Los acompañás a elección con pizzas artesanales a la leña o con nuestro gramajo casero. Contamos con chivitos vegetarianos y pizzas para celíacos."
+        ]
+    },
+    {
+        "id": 9,
+        "thumb": "1.jpg",
+        "delay": "100",
+        "title": "Chivitos + Tacos y Quesadillas",
+        "text": "Chivitos completos junto a tacos y quesadillas.",
+        "tags": [
+            "Chivitos",
+            "Tacos y Quesadillas"
+        ],
+        "price": 765,
+        "icon": "fa fa-heart",
+        "category": [
+            "chivitos"
+        ],
+        "description": [
+            "Nuestra propuesta más variada: chivitos completos junto a tacos de carne, pollo, cerdo o champignon y quesadillas Piccolo con queso, tomate, chorizos y cebolla.",
+            "Ideal para eventos donde querés sorprender con algo distinto. Todo se sirve sin picante, con salsa Tabasco aparte, y contamos con chivitos vegetarianos."
+        ]
+    },
+    {
+        "id": 10,
+        "thumb": "2.jpg",
+        "delay": "200",
+        "title": "Asado Completo",
+        "text": "Molleja, chorizos, provolone, morrón, papas y boniatos, colita de cuadril, entraña, matambrito de cerdo y pulpón de vacío.",
+        "tags": [
+            "Asado Completo"
+        ],
+        "price": 1025,
+        "icon": "fa fa-heart",
+        "category": [
+            "asado"
+        ],
+        "description": [
+            "El asado completo, hecho a la parrilla con leña en el lugar de tu evento: molleja, chorizos, provolone, morrón, colita de cuadril, entraña, matambrito de cerdo y pulpón de vacío.",
+            "Lo acompañamos con papas y boniatos, pan casero, salsa criolla, chimichurri y mayonesa. Nuestro equipo se encarga de cocinar y servir mientras vos disfrutás con tus invitados."
+        ]
+    },
+    {
+        "id": 11,
+        "thumb": "3.jpg",
+        "delay": "100",
+        "title": "Alfajores",
+        "text": "Alfajores artesanales para sumar a tu evento.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 85,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Alfajores artesanales para darle un cierre dulce a tu evento o acompañar el café de la sobremesa.",
+            "Se pueden sumar a cualquiera de nuestros menús. Agregalos al presupuesto indicando la cantidad que necesitás."
+        ]
+    },
+    {
+        "id": 12,
+        "thumb": "4.jpg",
+        "delay": "200",
+        "title": "Leña",
+        "text": "Leña para el horno y la parrilla.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 95,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "La leña que usamos para encender el horno y la parrilla durante tu evento. Es la que le da a nuestras pizzas y al asado ese sabor característico de la cocina a la leña.",
+            "Si no tenés leña en el lugar, sumala al presupuesto y nosotros la llevamos. Consultanos cuánta vas a necesitar según el menú y la cantidad de invitados."
+        ]
+    },
+    {
+        "id": 13,
+        "thumb": "5.jpg",
+        "delay": "300",
+        "title": "Fainá o Focaccia",
+        "text": "A elección, fainá o focaccia casera.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 115,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Elegí entre fainá o focaccia casera, horneadas a la leña. La fainá es la compañera infaltable de la pizza en Uruguay, ideal para comer a caballo.",
+            "La focaccia, con su masa esponjosa y aceite de oliva, es una gran opción para picar mientras salen las pizzas. Sumala a cualquiera de nuestros menús."
+        ]
+    },
+    {
+        "id": 14,
+        "thumb": "6.jpg",
+        "delay": "400",
+        "title": "Shots Dulces",
+        "text": "Shots dulces para cerrar el evento.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 125,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Pequeñas porciones dulces servidas en vasitos individuales, pensadas para cerrar el evento con algo rico sin necesidad de cortar torta ni armar mesa de postres.",
+            "Son prácticos para servir y fáciles de comer de pie. Consultanos por las opciones disponibles para la fecha de tu evento."
+        ]
+    },
+    {
+        "id": 15,
+        "thumb": "7.jpg",
+        "delay": "100",
+        "title": "Refrescos",
+        "text": "Refrescos para acompañar el menú.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 155,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Refrescos para acompañar el menú durante el evento. Sumalos a tu presupuesto y resolvé las bebidas en el mismo pedido.",
+            "Tené en cuenta que nuestro servicio no incluye mozos para bebidas, por lo que conviene prever un lugar donde tus invitados puedan servirse."
+        ]
+    },
+    {
+        "id": 16,
+        "thumb": "8.jpg",
+        "delay": "200",
+        "title": "Tabla Clásica",
+        "text": "Guacamole, alioli de remolacha, quesos, fiambres, aceitunas y frutos secos.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 245,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Nuestra tabla para picar mientras llegan los invitados: guacamole, alioli de remolacha, queso cuartirolo, queso colonia, queso roquefort, bondiola, mortadela, longaniza, aceitunas verdes y frutos secos.",
+            "Incluye pan casero y grisines. Sugerimos 1 tabla cada 6 invitados. Si querés una recepción más completa, consultanos por la Mesa de Bienvenida."
+        ]
+    },
+    {
+        "id": 17,
+        "thumb": "1.jpg",
+        "delay": "300",
+        "title": "Tabla Gourmet",
+        "text": "Tostaditas, guacamole, quesos premium, fiambres, brochettes capresse y frutos secos.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 295,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Una tabla más completa para recibir a tus invitados: tostaditas, guacamole, alioli de remolacha, queso camembert, queso roquefort, queso colonia, bondiola, mortadela, longaniza, brochettes capresse, aceitunas negras y frutos secos.",
+            "Incluye pan casero y grisines. Sugerimos 1 tabla cada 6 invitados. Podés combinarla con la Tabla Clásica para armar una Mesa de Bienvenida."
+        ]
+    },
+    {
+        "id": 18,
+        "thumb": "2.jpg",
+        "delay": "400",
+        "title": "Cerveza",
+        "text": "Cerveza para sumar a tu evento.",
+        "tags": [
+            "Complemento"
+        ],
+        "price": 295,
+        "icon": "fa fa-heart",
+        "category": [
+            "complementos"
+        ],
+        "description": [
+            "Cerveza para acompañar las pizzas, los chivitos o el asado. Sumala a tu presupuesto y resolvé las bebidas en el mismo pedido.",
+            "Tené en cuenta que nuestro servicio no incluye mozos para bebidas, por lo que conviene prever un lugar donde tus invitados puedan servirse."
+        ]
+    }
+]

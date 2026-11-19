@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "thumb": "1.jpg",
+        "delay": "100",
+        "tags": [
+            "Masa de fermentación lenta",
+            "A la leña"
+        ],
+        "name": "Pizzas",
+        "text": "Pizzas artesanales con masa de fermentación lenta, horneadas a la leña. Consultá los sabores disponibles en nuestro menú."
+    },
+    {
+        "id": 2,
+        "thumb": "2.jpg",
+        "delay": "200",
+        "tags": [
+            "Masa de fermentación lenta",
+            "Rellenos"
+        ],
+        "name": "Calzones",
+        "text": "Calzones rellenos y bien cerrados, hechos con la misma masa de nuestras pizzas y dorados al horno."
+    },
+    {
+        "id": 3,
+        "thumb": "3.jpg",
+        "delay": "400",
+        "tags": [
+            "Papas",
+            "Boniatos",
+            "Caseras"
+        ],
+        "name": "Tortillas",
+        "text": "Tortillas caseras de papas y boniatos, jugosas por dentro y doradas por fuera."
+    },
+    {
+        "id": 4,
+        "thumb": "4.jpg",
+        "delay": "600",
+        "tags": [
+            "Papas y boniatos",
+            "Panceta",
+            "Huevo"
+        ],
+        "name": "Gramajo Piccolo",
+        "text": "Papas y boniatos, cebolla, panceta, jamón, mozzarella, perejil y huevo. Nuestro clásico de la casa."
+    }
+]

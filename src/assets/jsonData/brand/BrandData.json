@@ -1,0 +1,22 @@
+[
+    { "id": 1, "thumb": "piccolo-1-dandrea.png", "name": "D'Andrea" },
+    { "id": 2, "thumb": "piccolo-2-enxuta.png", "name": "Enxuta" },
+    { "id": 3, "thumb": "piccolo-3-kreilabs.png", "name": "KreiLabs" },
+    { "id": 4, "thumb": "piccolo-4-fundacion-nuestro-camino.png", "name": "Fundación Nuestro Camino" },
+    { "id": 5, "thumb": "piccolo-5-cisplatina-turismo.png", "name": "Cisplatina Turismo" },
+    { "id": 6, "thumb": "piccolo-6-planit.png", "name": "PlanIT" },
+    { "id": 7, "thumb": "piccolo-7-gestcom.png", "name": "Gestcom" },
+    { "id": 8, "thumb": "piccolo-8-inswitch.png", "name": "Inswitch" },
+    { "id": 9, "thumb": "piccolo-9-forus.png", "name": "Forus" },
+    { "id": 10, "thumb": "piccolo-10-club-nautico.png", "name": "Club Náutico" },
+    { "id": 11, "thumb": "piccolo-11-ircca.png", "name": "IRCCA" },
+    { "id": 12, "thumb": "piccolo-12-true-training.png", "name": "True Training" },
+    { "id": 13, "thumb": "piccolo-13-look-be-creative.png", "name": "Look Be Creative" },
+    { "id": 14, "thumb": "piccolo-14-saco.png", "name": "Saco" },
+    { "id": 15, "thumb": "piccolo-15-xmart-labs.png", "name": "Xmart Labs" },
+    { "id": 16, "thumb": "piccolo-16-pedro-meria.png", "name": "Pedro Meria" },
+    { "id": 17, "thumb": "piccolo-17-trafigura.png", "name": "Trafigura" },
+    { "id": 18, "thumb": "piccolo-18-crediton.png", "name": "Crediton" },
+    { "id": 19, "thumb": "piccolo-19-atos.png", "name": "Atos" },
+    { "id": 20, "thumb": "piccolo-20-syngenta.png", "name": "Syngenta" }
+]
