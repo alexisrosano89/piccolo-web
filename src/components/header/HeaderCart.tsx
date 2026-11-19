@@ -1,9 +1,9 @@
+import { toastEliminado } from "../cart/toastAgregado";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { MIN_PERSONAS_SENA, calcularTotales, estadoSena, mensajeMinimoSena } from "../../utils/presupuesto";
 import { removeFromCart } from "../../store/slices/cartSlice";
-import { toast } from "react-toastify";
 
 const HeaderCart = () => {
 
@@ -16,7 +16,7 @@ const HeaderCart = () => {
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Producto eliminado del presupuesto");
+        toastEliminado(id);
     };
 
     return (
@@ -53,8 +53,8 @@ const HeaderCart = () => {
                                     <li className="total">
                                         <span className="pull-right cart-total"><strong>Total</strong><strong>${totalAmount.toFixed(0)}</strong></span>
                                         <Link to="/presupuesto" className="btn btn-default btn-cart">Ver</Link>
-                                        <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena.faltan)}>Señar</Link>
-                                        {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas en menús principales para señar.</p>}
+                                        <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena)}>Señar</Link>
+                                        {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas por menú principal para señar.</p>}
                                     </li>
                                 </>
                             ) : (

@@ -1,9 +1,9 @@
+import { toastEliminado } from "./toastAgregado";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { removeFromCart, updateQuantity } from "../../store/slices/cartSlice";
-import { toast } from "react-toastify";
-import { GROUP_DISCOUNTS, MIN_PERSONAS_SENA, calcularLinea, calcularTotales, estadoSena, mensajeMinimoSena } from "../../utils/presupuesto";
+import { GROUP_DISCOUNTS, MIN_PERSONAS_SENA, calcularLinea, calcularTotales, estadoSena, mensajeMinimoSena, cantidadMinima } from "../../utils/presupuesto";
 import QtyStepper from "../select/QtyStepper";
 
 // Para el aviso, de menor a mayor: +50, +100, +150.
@@ -19,7 +19,7 @@ const CartPageContent = () => {
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Producto eliminado del presupuesto");
+        toastEliminado(id);
     };
 
     const handleQuantityChange = (id: number, quantity: number) => {
@@ -35,6 +35,18 @@ const CartPageContent = () => {
                         <p className="woocommerce-info group-discounts-note">
                             Descuentos por cantidad de invitados: {ESCALONES.map(d => `+${d.personas} personas, ${d.descuento}%`).join(" · ")}. Válido para menú principal.
                         </p>
+
+                        {/* Presupuesto vacío: en vez de la tabla vacía, un mensaje para ir a los menús */}
+                        {cartItems.length === 0 && (
+                            <div className="cart-empty">
+                                <i className="fas fa-clipboard-list" aria-hidden="true" />
+                                <h3>Tu presupuesto está vacío</h3>
+                                <p>Agregá los platos que quieras desde Cotizar y acá vas a ver el costo final de tu evento.</p>
+                                <Link to="/cotizar" className="btn btn-theme btn-md animation">Ver menús</Link>
+                            </div>
+                        )}
+
+                        {cartItems.length > 0 && (<>
                         <div className="shop-cart-info">
                             <form className="woocommerce-cart-form">
                                 <table className="shop-cart-table">
@@ -78,6 +90,7 @@ const CartPageContent = () => {
                                                     <QtyStepper
                                                         value={item.quantity}
                                                         onChange={(n) => handleQuantityChange(item.id, n)}
+                                                        min={cantidadMinima(item)}
                                                     />
                                                 </td>
                                                 <td className="product-subtotal">
@@ -116,7 +129,7 @@ const CartPageContent = () => {
                                                 {sena.habilitada ? (
                                                     <Link to="/reservar">Señar fecha</Link>
                                                 ) : (
-                                                    <span className="sena-disabled" aria-disabled="true" title={mensajeMinimoSena(sena.faltan)}>Señar fecha</span>
+                                                    <span className="sena-disabled" aria-disabled="true" title={mensajeMinimoSena(sena)}>Señar fecha</span>
                                                 )}
                                             </td>
                                         </tr>
@@ -132,29 +145,50 @@ const CartPageContent = () => {
                                     <i className="fas fa-users" />
                                 </div>
                                 <div className="sena-banner-body">
-                                    <h4>
-                                        {sena.faltan === 1 ? "Te falta 1 persona" : `Te faltan ${sena.faltan} personas`} para señar la fecha
-                                    </h4>
-                                    <p>
-                                        El mínimo es de {MIN_PERSONAS_SENA} personas en menús principales. Podés combinar distintos menús.
-                                    </p>
-                                    <div
-                                        className="sena-banner-progress"
-                                        role="progressbar"
-                                        aria-valuemin={0}
-                                        aria-valuemax={MIN_PERSONAS_SENA}
-                                        aria-valuenow={sena.personas}
-                                        aria-label="Personas en menús principales"
-                                    >
-                                        <span style={{ width: `${Math.min(100, (sena.personas / MIN_PERSONAS_SENA) * 100)}%` }} />
-                                    </div>
-                                    <small>{sena.personas} de {MIN_PERSONAS_SENA} personas</small>
+                                    {sena.sinMenuPrincipal ? (
+                                        <>
+                                            <h4>Agregá un menú principal para señar la fecha</h4>
+                                            <p>
+                                                Elegí al menos un menú de pizzas, chivitos o asado, con mínimo {MIN_PERSONAS_SENA} personas.
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h4>Todavía no podés señar la fecha</h4>
+                                            <p>
+                                                Cada menú principal necesita mínimo {MIN_PERSONAS_SENA} personas. Los menús no se combinan.
+                                            </p>
+                                            {sena.pendientes.map(p => (
+                                                <div className="sena-banner-menu" key={p.id}>
+                                                    <div className="sena-banner-menu-head">
+                                                        <strong>{p.title}</strong>
+                                                        <span>
+                                                            {p.quantity} de {MIN_PERSONAS_SENA} · {p.faltan === 1 ? "falta 1" : `faltan ${p.faltan}`}
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        className="sena-banner-progress"
+                                                        role="progressbar"
+                                                        aria-valuemin={0}
+                                                        aria-valuemax={MIN_PERSONAS_SENA}
+                                                        aria-valuenow={p.quantity}
+                                                        aria-label={`Personas en ${p.title}`}
+                                                    >
+                                                        <span style={{ width: `${Math.min(100, (p.quantity / MIN_PERSONAS_SENA) * 100)}%` }} />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </>
+                                    )}
                                 </div>
-                                <Link to="/cotizar" className="btn btn-theme btn-md animation sena-banner-btn">
-                                    Agregar menús
-                                </Link>
+                                {sena.sinMenuPrincipal && (
+                                    <Link to="/cotizar" className="btn btn-theme btn-md animation sena-banner-btn">
+                                        Ver menús
+                                    </Link>
+                                )}
                             </div>
                         )}
+                        </>)}
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import { toastEliminado } from "../cart/toastAgregado";
 import logoLight2 from "/assets/img/logo-light-2.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -36,7 +37,7 @@ const SidebarInfo: React.FC<HeaderSearchProps> = ({ closeInfoBar, isInfoOpen }) 
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Producto eliminado del presupuesto");
+        toastEliminado(id);
     };
 
     return (
@@ -74,8 +75,8 @@ const SidebarInfo: React.FC<HeaderSearchProps> = ({ closeInfoBar, isInfoOpen }) 
                                         <li className="total">
                                             <span className="pull-right cart-total"><strong>Total</strong><strong>${totalAmount.toFixed(0)}</strong></span>
                                             <Link to="/presupuesto" className="btn btn-default btn-cart">Ver</Link>
-                                            <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena.faltan)}>Señar</Link>
-                                        {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas en menús principales para señar.</p>}
+                                            <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena)}>Señar</Link>
+                                        {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas por menú principal para señar.</p>}
                                         </li>
                                     </>
                                 ) : (

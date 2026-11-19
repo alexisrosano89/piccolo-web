@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import QtyStepper from "../select/QtyStepper";
+import { cantidadMinima } from "../../utils/presupuesto";
 import { addToCart } from "../../store/slices/cartSlice";
 import { slugify } from "../../assets/jsonData/menu/slugify";
 
@@ -24,7 +25,9 @@ const SingleIsotopeContent = ({ food }: { food: DataType }) => {
     const { id, thumb, title, text, price, delay } = food
 
     const dispatch = useDispatch();
-    const [quantity, setQuantity] = useState(1);
+    // Menús principales arrancan (y no bajan) de 15 personas; complementos, de 1.
+    const minimo = cantidadMinima({ id: MENU_CART_ID_OFFSET + (id ?? 0) });
+    const [quantity, setQuantity] = useState(minimo);
 
     const handleAddToCart = () => {
         dispatch(
@@ -36,7 +39,7 @@ const SingleIsotopeContent = ({ food }: { food: DataType }) => {
                 quantity,
             })
         );
-        toastAgregado();
+        toastAgregado(MENU_CART_ID_OFFSET + id!);
     };
 
     return (
@@ -57,7 +60,7 @@ const SingleIsotopeContent = ({ food }: { food: DataType }) => {
                         </div>
                     </div>
                     <div className="quick-add-to-cart">
-                        <QtyStepper value={quantity} onChange={setQuantity} />
+                        <QtyStepper value={quantity} onChange={setQuantity} min={minimo} />
                         <button type="button" className="add-to-cart-btn" onClick={handleAddToCart}>
                             <i className="fas fa-shopping-cart" />
                             Agregar

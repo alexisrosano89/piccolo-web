@@ -55,9 +55,9 @@ const MenuIsotope: React.FC<MenuIsotopeProps> = ({ hasTitle, sectionClass }) => 
                             <div className="col-lg-8 offset-lg-2">
                                 <div className="site-heading text-center">
                                     <h4 className="sub-title">Nuestro Menú</h4>
-                                    <h2 className="title">Elegí tu Plato Favorito</h2>
+                                    <h2 className="title">Elegí tus Platos</h2>
                                     <p>
-                                        Agregá los platos que quieras al carrito y vas a poder ver el costo final de tu pedido.
+                                        Agregá los platos que quieras al presupuesto y vas a poder ver el costo final de tu pedido.
                                     </p>
                                 </div>
                             </div>

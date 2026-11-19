@@ -1,8 +1,9 @@
 import { toastAgregado } from "../cart/toastAgregado";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import QtyStepper from "../select/QtyStepper";
+import { cantidadMinima } from "../../utils/presupuesto";
 import { addToCart } from "../../store/slices/cartSlice";
 import { getMenuDetailsForTags } from "../../assets/jsonData/menu/MenuDetailData";
 import RelatedComplements from "./RelatedComplements";
@@ -41,7 +42,14 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
     const isComplement = category?.includes("complementos");
 
     const dispatch = useDispatch();
-    const [quantity, setQuantity] = useState(1);
+    // Menús principales arrancan (y no bajan) de 15 personas; complementos, de 1.
+    const minimo = cantidadMinima({ id: MENU_CART_ID_OFFSET + (id ?? 0) });
+    const [quantity, setQuantity] = useState(minimo);
+
+    // Al pasar de un menú a otro (misma página, otra URL) volvemos al mínimo del nuevo menú.
+    useEffect(() => {
+        setQuantity(minimo);
+    }, [id, minimo]);
 
     const handleAddToCart = () => {
         dispatch(
@@ -53,7 +61,7 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
                 quantity,
             })
         );
-        toastAgregado();
+        toastAgregado(MENU_CART_ID_OFFSET + id!);
     };
 
     const detailBlocks = getMenuDetailsForTags(tags);
@@ -92,7 +100,7 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
                                     </div>
                                     <p>{text}</p>
                                     <div className="product-purchase-list">
-                                        <QtyStepper value={quantity} onChange={setQuantity} />
+                                        <QtyStepper value={quantity} onChange={setQuantity} min={minimo} />
                                         <Link to="#" className="btn secondary btn-theme btn-sm animation" onClick={handleAddToCart}>
                                             <i className="fas fa-shopping-cart" />
                                             Agregar al presupuesto

@@ -49,26 +49,52 @@ export const calcularLinea = (item: ItemBase): LineaPresupuesto => {
 };
 
 /**
- * Mínimo para poder señar la fecha: 15 personas sumando todos los menús principales
- * (se pueden combinar, p. ej. 10 de Pizzas + 5 de Chivitos). Los complementos no cuentan.
+ * Mínimo para poder señar la fecha: cada menú principal del presupuesto tiene que tener al menos
+ * 15 personas. Los menús NO se combinan (10 de Pizzas + 5 de Chivitos no alcanza).
+ * Hace falta al menos un menú principal; los complementos no cuentan ni tienen mínimo.
  */
 export const MIN_PERSONAS_SENA = 15;
 
-export const personasMenuPrincipal = (items: { id: number; quantity: number }[]) =>
-    items.filter(esMenuPrincipal).reduce((t, i) => t + i.quantity, 0);
+interface ItemSena {
+    id: number;
+    quantity: number;
+    title?: string;
+}
 
-export const estadoSena = (items: { id: number; quantity: number }[]) => {
-    const personas = personasMenuPrincipal(items);
+export interface MenuPendiente {
+    id: number;
+    title: string;
+    quantity: number;
+    faltan: number;
+}
+
+export const estadoSena = (items: ItemSena[]) => {
+    const principales = items.filter(esMenuPrincipal);
+    const pendientes: MenuPendiente[] = principales
+        .filter(i => i.quantity < MIN_PERSONAS_SENA)
+        .map(i => ({ id: i.id, title: i.title ?? "Menú", quantity: i.quantity, faltan: MIN_PERSONAS_SENA - i.quantity }));
+    const sinMenuPrincipal = principales.length === 0;
     return {
-        personas,
-        faltan: Math.max(0, MIN_PERSONAS_SENA - personas),
-        habilitada: personas >= MIN_PERSONAS_SENA,
+        sinMenuPrincipal,
+        pendientes,
+        habilitada: !sinMenuPrincipal && pendientes.length === 0,
     };
 };
 
-export const mensajeMinimoSena = (faltan: number) =>
-    `Mínimo ${MIN_PERSONAS_SENA} personas en menús principales para señar la fecha (podés combinar menús). ` +
-    `Te ${faltan === 1 ? "falta 1 persona" : `faltan ${faltan} personas`}.`;
+/** Cantidad mínima del selector: 15 en menús principales, 1 en complementos. */
+export const cantidadMinima = (item: { id: number }) =>
+    esMenuPrincipal(item) ? MIN_PERSONAS_SENA : 1;
+
+const personas = (n: number) => (n === 1 ? "1 persona" : `${n} personas`);
+
+/** Mensaje corto explicando qué falta para poder señar. */
+export const mensajeMinimoSena = (estado: ReturnType<typeof estadoSena>) => {
+    if (estado.sinMenuPrincipal) {
+        return `Para señar la fecha agregá un menú principal (mínimo ${MIN_PERSONAS_SENA} personas).`;
+    }
+    const detalle = estado.pendientes.map(p => `a ${p.title} le ${p.faltan === 1 ? "falta" : "faltan"} ${personas(p.faltan)}`);
+    return `Cada menú principal necesita mínimo ${MIN_PERSONAS_SENA} personas (los menús no se combinan): ${detalle.join(", ")}.`;
+};
 
 export const calcularTotales = (items: ItemBase[]) => {
     const lineas = items.map(calcularLinea);

@@ -38,7 +38,7 @@ const grupos: { titulo: string; preguntas: Pregunta[] }[] = [
             {
                 pregunta: "¿Cuál es la cantidad mínima de invitados?",
                 respuesta: [
-                    `El mínimo es de ${MIN_PERSONAS_SENA} personas en menús principales (pizzas, chivitos o asado). Podés combinar distintos menús para llegar al mínimo; los complementos no cuentan.`,
+                    `El mínimo es de ${MIN_PERSONAS_SENA} personas por cada menú principal (pizzas, chivitos o asado). Podés pedir más de un menú, pero cada uno tiene que llegar a ${MIN_PERSONAS_SENA}: las cantidades no se combinan entre menús. Los complementos no tienen mínimo.`,
                 ],
             },
             {

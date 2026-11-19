@@ -29,7 +29,7 @@ const SingleComplementCard = ({ food }: { food: DataType }) => {
                 quantity: 1,
             })
         );
-        toastAgregado();
+        toastAgregado(MENU_CART_ID_OFFSET + id!);
     };
 
     return (

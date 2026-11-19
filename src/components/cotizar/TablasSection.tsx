@@ -40,7 +40,6 @@ const TablasSection = ({ sectionClass }: DataType) => {
                                 <div className="info">
                                     <h3>Clásica</h3>
                                     <p className="menu-type-description">{clasicaItems}</p>
-                                    <Link to={WHATSAPP_LINK} target="_blank" className="btn mt-40 circle btn-sm btn-theme effect">Consultar</Link>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +54,6 @@ const TablasSection = ({ sectionClass }: DataType) => {
                                 <div className="info">
                                     <h3>Gourmet</h3>
                                     <p className="menu-type-description">{gourmetItems}</p>
-                                    <Link to={WHATSAPP_LINK} target="_blank" className="btn mt-40 circle btn-sm btn-theme effect">Consultar</Link>
                                 </div>
                             </div>
                         </div>
@@ -72,11 +70,17 @@ const TablasSection = ({ sectionClass }: DataType) => {
                                     <p className="menu-type-description">
                                         1 tabla clásica + 1 tabla gourmet presentada en una mesa amplia, para 15 personas. Personalizable. Consulte precio.
                                     </p>
-                                    <Link to={WHATSAPP_LINK} target="_blank" className="btn mt-40 circle btn-sm btn-theme effect">Consultar</Link>
                                 </div>
                             </div>
                         </div>
 
+                    </div>
+
+                    {/* Un solo botón de consulta para las tres tablas */}
+                    <div className="tablas-cta text-center" data-aos="fade-up" data-aos-delay="200">
+                        <Link to={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn circle btn-md btn-theme effect">
+                            <i className="fab fa-whatsapp" /> Consultar
+                        </Link>
                     </div>
                 </div>
             </div>

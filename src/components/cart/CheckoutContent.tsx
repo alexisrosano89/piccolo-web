@@ -70,7 +70,7 @@ const CheckoutContent = () => {
         const form = event.currentTarget;
 
         if (!sena.habilitada) {
-            toast.error(mensajeMinimoSena(sena.faltan));
+            toast.error(mensajeMinimoSena(sena));
             return;
         }
 

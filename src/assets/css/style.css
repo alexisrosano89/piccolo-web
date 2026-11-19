@@ -11472,6 +11472,47 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	text-align: center;
 }
 
+/* /cotizar "Nuestras Tablas": botón único de consulta por WhatsApp debajo de las tarjetas */
+.tablas-cta {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+/* /cotizar: menos espacio entre secciones seguidas con el mismo fondo
+   (menús → "Para Picar" → "¿Cómo se abona el servicio?") */
+.food-menu-area.inc-isotop.default-padding {
+	padding-bottom: 70px;
+}
+
+.food-menu-area + .menu-type-area.default-padding {
+	padding-top: 70px;
+}
+
+.menu-type-area.default-padding.bottom-less {
+	padding-bottom: 50px;
+}
+
+.menu-type-area + .payment-area.default-padding {
+	padding-top: 50px;
+}
+
+@media (max-width: 991px) {
+	.food-menu-area.inc-isotop.default-padding,
+	.menu-type-area.default-padding.bottom-less {
+		padding-bottom: 30px;
+	}
+
+	.food-menu-area + .menu-type-area.default-padding,
+	.menu-type-area + .payment-area.default-padding {
+		padding-top: 30px;
+	}
+}
+
+.tablas-cta .btn i {
+	margin-right: 8px;
+	font-size: 18px;
+}
+
 /* ---------- Preguntas frecuentes (FaqSection) ---------- */
 .faq-group {
 	margin-bottom: 40px;
@@ -11627,6 +11668,30 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	color: var(--white);
 }
 
+/* /presupuesto vacío */
+.cart-empty {
+	text-align: center;
+	padding: 60px 20px;
+	border-radius: 20px;
+	background: var(--bg-gray);
+}
+
+.cart-empty i {
+	font-size: 46px;
+	color: var(--color-primary);
+	margin-bottom: 20px;
+}
+
+.cart-empty h3 {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.cart-empty p {
+	max-width: 480px;
+	margin: 0 auto 25px;
+}
+
 /* /presupuesto: banner "te faltan X personas para señar" */
 .sena-banner {
 	margin-top: 30px;
@@ -11681,6 +11746,28 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	border-radius: 10px;
 	background: var(--color-primary);
 	transition: width 0.4s ease;
+}
+
+.sena-banner-menu + .sena-banner-menu {
+	margin-top: 14px;
+}
+
+.sena-banner-menu-head {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	flex-wrap: wrap;
+	margin-bottom: 6px;
+}
+
+.sena-banner-menu-head strong {
+	color: var(--color-heading);
+}
+
+.sena-banner-menu-head span {
+	font-weight: 600;
+	color: var(--color-primary);
+	white-space: nowrap;
 }
 
 .sena-banner-body small {
