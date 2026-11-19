@@ -1,5 +1,4 @@
 import BackgroundVideo from "./BackgroundVideo";
-import { Link } from "react-router-dom";
 import shape6 from "/assets/img/shape/6.png"
 
 const VideoV1 = () => {
@@ -12,7 +11,6 @@ const VideoV1 = () => {
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2">
                                 <h2 className="title">Cocina a la leña, recién hecha y servida en tu evento</h2>
-                                <Link className="btn btn-theme btn-md animation mt-30" to="/cotizar">Cotizar</Link>
                             </div>
                         </div>
                     </div>

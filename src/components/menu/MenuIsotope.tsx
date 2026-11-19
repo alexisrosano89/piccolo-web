@@ -3,6 +3,7 @@ import SingleIsotopeContent from "./SingleIsotopeContent";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Pagination from "react-paginate";
+import { MIN_PERSONAS_SENA } from "../../utils/presupuesto";
 
 interface MenuIsotopeProps {
     hasTitle?: boolean;
@@ -57,7 +58,7 @@ const MenuIsotope: React.FC<MenuIsotopeProps> = ({ hasTitle, sectionClass }) => 
                                     <h4 className="sub-title">Nuestro Menú</h4>
                                     <h2 className="title">Elegí tus Platos</h2>
                                     <p>
-                                        Agregá los platos que quieras al presupuesto y vas a poder ver el costo final de tu pedido.
+                                        Agregá los platos que quieras al presupuesto y vas a poder ver el costo final de tu pedido. Cada menú principal tiene un mínimo de {MIN_PERSONAS_SENA} personas.
                                     </p>
                                 </div>
                             </div>
