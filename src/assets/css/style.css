@@ -6049,6 +6049,289 @@ ul.list-style-one li::after {
 	font-weight: 700;
 }
 
+/* /reservar: comentarios chicos debajo del email */
+form.checkout-form .form-group textarea.checkout-comments {
+	height: auto;
+	min-height: 95px;
+	resize: vertical;
+}
+
+/* /reservar: resumen "Tu presupuesto" en la columna derecha */
+.checkout-summary {
+	margin-top: 0;
+}
+
+.checkout-summary .table {
+	margin-bottom: 0;
+}
+
+/* Montos alineados a la derecha, como en una boleta */
+.checkout-summary .table tr > :last-child {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.checkout-summary .table tbody td:first-child {
+	font-weight: 500;
+}
+
+.checkout-summary .table tr.checkout-summary-note > :last-child {
+	white-space: normal;
+	font-size: 14px;
+}
+
+/* Banner verde claro "¡Tenés un descuento por cantidad!" */
+.discount-banner {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+	padding: 14px 20px;
+	border-radius: 12px;
+	background: #e8f7ee;
+	border: 1px solid #a8dcbb;
+}
+
+.discount-banner i {
+	flex-shrink: 0;
+	font-size: 18px;
+	color: #1e8449;
+}
+
+.discount-banner strong {
+	color: #1b6b3c;
+}
+
+.checkout-summary-total th {
+	font-size: 20px;
+}
+
+.checkout-summary-edit {
+	margin: 12px 0 0;
+	text-align: right;
+}
+
+.checkout-summary-edit a {
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.checkout-summary-edit a i {
+	margin-right: 5px;
+	font-size: 13px;
+}
+
+@media (max-width: 991px) {
+	.checkout-summary {
+		margin-bottom: 10px;
+	}
+}
+
+/* /reservar: recuadro "¿Cómo señar? $2000" con los datos de pago */
+.sena-info {
+	margin: 30px 0 25px;
+	border: 2px solid #f3c9d1;
+	border-radius: 20px;
+	background: var(--white);
+	overflow: hidden;
+}
+
+.sena-info-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	padding: 20px 30px;
+	background: #fdecef;
+}
+
+.sena-info-head h4 {
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.sena-info-amount {
+	font-family: var(--font-heading);
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--white);
+	background: var(--color-primary);
+	padding: 8px 18px;
+	border-radius: 10px;
+}
+
+.sena-info-methods {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 25px 40px;
+	padding: 25px 30px;
+}
+
+.sena-info-method {
+	display: flex;
+	gap: 15px;
+}
+
+.sena-info-number {
+	font-family: var(--font-heading);
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 0.9;
+	color: var(--color-primary);
+	opacity: 0.35;
+}
+
+.sena-info-method h5 {
+	margin-bottom: 4px;
+}
+
+.sena-info-note {
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-style: italic;
+	opacity: 0.8;
+}
+
+.sena-info-method ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sena-info-method li {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 4px;
+}
+
+.sena-info-method li span {
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.sena-info-method li strong {
+	color: var(--color-heading);
+	font-size: 17px;
+}
+
+.checkout-form .sena-info-copy {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 50%;
+	background: var(--bg-gray);
+	color: var(--color-heading);
+	font-size: 13px;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.checkout-form .sena-info-copy::after {
+	content: none;
+}
+
+.checkout-form .sena-info-copy:hover {
+	background: var(--color-primary);
+	color: var(--white);
+}
+
+.sena-info-important {
+	padding: 15px 30px 20px;
+	border-top: 2px solid #f3c9d1;
+	background: #fffafa;
+}
+
+.sena-info-important h6 {
+	margin-bottom: 6px;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+.sena-info-important p {
+	margin: 0;
+	font-style: italic;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+	.sena-info-methods {
+		grid-template-columns: 1fr;
+		padding: 20px;
+	}
+
+	.sena-info-head,
+	.sena-info-important {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.sena-info-amount {
+		font-size: 26px;
+	}
+}
+
+/* Teléfono con bandera en /reservar (react-phone-number-input) */
+.checkout-form .phone-field {
+	display: flex;
+	align-items: stretch;
+	gap: 10px;
+}
+
+.checkout-form .phone-field .PhoneInputCountry {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 0 14px;
+	min-height: 55px;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	background: var(--white);
+	margin: 0;
+}
+
+.checkout-form .phone-field .PhoneInputCountryIcon {
+	width: 28px;
+	height: 19px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+	background: transparent;
+}
+
+.checkout-form .phone-field .PhoneInputCountryIcon svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.checkout-form .phone-field .PhoneInputCountrySelectArrow {
+	color: var(--color-heading);
+	opacity: 0.6;
+	margin-left: 4px;
+}
+
+.checkout-form .phone-field .form-control {
+	flex: 1;
+	min-width: 0;
+}
+
+.checkout-form .phone-field.is-invalid .form-control,
+.checkout-form .phone-field.is-invalid .PhoneInputCountry {
+	border-color: var(--color-primary);
+}
+
+.checkout-form .field-error {
+	display: block;
+	margin-top: 6px;
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
 /* Fecha del evento en /reservar */
 .checkout-form .checkout-date {
 	position: relative;
@@ -6056,6 +6339,20 @@ ul.list-style-one li::after {
 
 .checkout-form .checkout-date .form-control {
 	padding-right: 45px;
+}
+
+/* Selector de hora: sin la flecha del navegador (usa el ícono de reloj) */
+.checkout-form select.checkout-time {
+	min-height: 55px;
+	padding: 0 45px 0 15px;
+	appearance: none;
+	-webkit-appearance: none;
+	background-color: var(--white);
+	cursor: pointer;
+}
+
+.checkout-form select.checkout-time:invalid {
+	color: #9a9a9a;
 }
 
 .checkout-form .checkout-date-icon {

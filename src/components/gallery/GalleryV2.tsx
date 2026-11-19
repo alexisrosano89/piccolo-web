@@ -9,7 +9,7 @@ const GalleryV2 = () => {
                         <div className="col-lg-8 offset-lg-2">
                             <div className="site-heading text-center">
                                 <h4 className="sub-title">Galería</h4>
-                                <h2 className="title">Así Viven Nuestros Eventos</h2>
+                                <h2 className="title">Así se Viven Nuestros Eventos</h2>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,6 @@ import MenuIsotope from "../../components/menu/MenuIsotope";
 import TablasSection from "../../components/cotizar/TablasSection";
 import PaymentPolicy from "../../components/cotizar/PaymentPolicy";
 import IncludesSection from "../../components/cotizar/IncludesSection";
-import FaqSection from "../../components/cotizar/FaqSection";
 
 const FoodMenuPage = () => {
     return (
@@ -20,7 +19,6 @@ const FoodMenuPage = () => {
                 <TablasSection sectionClass="bg-gray" />
                 <PaymentPolicy sectionClass="bg-gray" />
                 <IncludesSection />
-                <FaqSection sectionClass="bg-gray" withSchema={false} />
             </LayoutV5>
         </>
     );

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Home6Page from "./pages/homePages/Home6";
@@ -8,7 +9,9 @@ import FoodMenuPage from "./pages/FoodPage/FoodMenu";
 import FoodSinglePage from "./pages/FoodPage/FoodSinglePage";
 
 import CartPage from "./pages/shopPage/CartPage";
-import CheckoutPage from "./pages/shopPage/CheckoutPage";
+// /reservar se carga aparte: trae el selector de teléfono con banderas, el calendario y el
+// generador de PDF, que son pesados y no hacen falta en el resto del sitio.
+const CheckoutPage = lazy(() => import("./pages/shopPage/CheckoutPage"));
 
 import NotFoundPage from "./pages/innerPages/NotFoundPage";
 import EventosPage from "./pages/innerPages/EventosPage";
@@ -31,7 +34,7 @@ const Routers = () => {
                 <Route path="/preguntas-frecuentes" element={<FaqPage />} ></Route>
                 <Route path="/faq" element={<Navigate to="/preguntas-frecuentes" replace />} ></Route>
                 <Route path='/presupuesto' element={<CartPage />}></Route>
-                <Route path='/reservar' element={<CheckoutPage />}></Route>
+                <Route path='/reservar' element={<Suspense fallback={null}><CheckoutPage /></Suspense>}></Route>
 
                 {/* Direcciones viejas o en inglés que redirigen a la página real */}
                 <Route path="/home-6" element={<Navigate to="/" replace />} ></Route>

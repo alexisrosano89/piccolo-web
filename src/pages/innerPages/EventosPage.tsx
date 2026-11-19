@@ -7,7 +7,7 @@ const EventosPage = () => {
         <>
             <Seo
                 title="Eventos"
-                description="Así viven nuestros eventos: cocina a la leña en el lugar, personal para servir y buena energía. Mirá fotos y videos de Piccolo Cocina Artesanal."
+                description="Así se viven nuestros eventos: cocina a la leña en el lugar, personal para servir y buena energía. Mirá fotos y videos de Piccolo Cocina Artesanal."
                 path="/eventos"
             />
             <LayoutV5 title="Eventos" breadCrumb="Eventos">

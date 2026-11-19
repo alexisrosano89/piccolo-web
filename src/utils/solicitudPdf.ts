@@ -1,4 +1,5 @@
 import { jsPDF } from "jspdf";
+import { METODOS_SENA, SENA_IMPORTANTE, SENA_MONTO } from "./sena";
 
 export interface SolicitudItem {
     title: string;
@@ -13,6 +14,7 @@ export interface Solicitud {
     emitida: Date;
     nombre: string;
     fechaEvento: Date | null;
+    horaEvento: string; // "HH:mm"
     departamento: string;
     direccion: string;
     direccion2: string;
@@ -126,6 +128,7 @@ export const generarSolicitudPdf = async (s: Solicitud): Promise<jsPDF> => {
 
     seccion("Evento");
     fila("Fecha del evento", formatFecha(s.fechaEvento));
+    fila("Hora del evento", s.horaEvento ? `${s.horaEvento} hs` : "");
     fila("Departamento", s.departamento);
     fila("Dirección", [s.direccion, s.direccion2].filter(Boolean).join(" - "));
     fila("Comentarios", s.comentarios);
@@ -201,21 +204,61 @@ export const generarSolicitudPdf = async (s: Solicitud): Promise<jsPDF> => {
     doc.text(formatPesos(s.total), colSub - 2, y + 2, { align: "right" });
     y += 14;
 
-    // Seña
-    const sena = doc.splitTextToSize(
-        "Para reservar la fecha se abona una seña de $2000 por Abitab / Red Pagos o transferencia al banco Itaú. " +
-        "La fecha queda reservada únicamente cuando nos enviás el comprobante por WhatsApp.",
-        W - M * 2 - 10
-    );
-    const altoSena = sena.length * 5 + 4;
-    nuevaPaginaSiHaceFalta(altoSena);
+    // Cómo señar (datos de pago, de utils/sena.ts)
+    const anchoCaja = W - M * 2;
+    const importante = doc.splitTextToSize(SENA_IMPORTANTE.join(" "), anchoCaja - 10);
+    const altoMetodo = (m: (typeof METODOS_SENA)[number]) => 6 + (m.nota ? 5 : 0) + m.datos.length * 5 + 3;
+    const altoCajaSena = 12 + METODOS_SENA.reduce((t, m) => t + altoMetodo(m), 0) + 8 + importante.length * 5 + 2;
+    nuevaPaginaSiHaceFalta(altoCajaSena + 4);
+
+    const yCaja = y - 5;
     doc.setFillColor(253, 236, 239);
-    doc.roundedRect(M, y - 5, W - M * 2, altoSena, 2, 2, "F");
+    doc.roundedRect(M, yCaja, anchoCaja, altoCajaSena, 2, 2, "F");
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(30, 30, 30);
+    doc.text("¿Cómo señar?", M + 5, y + 2);
+    doc.setTextColor(...ROJO);
+    doc.text(formatPesos(SENA_MONTO), W - M - 5, y + 2, { align: "right" });
+    y += 10;
+
+    METODOS_SENA.forEach((m, i) => {
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(30, 30, 30);
+        doc.text(`${i + 1}. ${m.titulo}`, M + 5, y);
+        y += 5;
+        if (m.nota) {
+            doc.setFont("helvetica", "italic");
+            doc.setFontSize(9);
+            doc.setTextColor(...GRIS);
+            doc.text(m.nota, M + 9, y);
+            y += 5;
+        }
+        m.datos.forEach(d => {
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.setTextColor(...GRIS);
+            doc.text(`${d.label}:`, M + 9, y);
+            doc.setFont("helvetica", "bold");
+            doc.setTextColor(30, 30, 30);
+            doc.text(d.valor, M + 9 + doc.getTextWidth(`${d.label}: `), y);
+            y += 5;
+        });
+        y += 3;
+    });
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(9);
+    doc.setTextColor(...ROJO);
+    doc.text("IMPORTANTE", M + 5, y + 1);
+    y += 6;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(60, 60, 60);
-    doc.text(sena, M + 5, y + 1);
-    y += altoSena + 6;
+    doc.text(importante, M + 5, y);
+    y = yCaja + altoCajaSena + 8;
 
     // Pie
     doc.setFontSize(9);
@@ -231,7 +274,7 @@ export const resumenWhatsApp = (s: Solicitud) => {
         `*Solicitud de reserva ${s.numero}*`,
         "",
         `*Nombre:* ${s.nombre}`,
-        `*Fecha del evento:* ${formatFecha(s.fechaEvento)}`,
+        `*Fecha del evento:* ${formatFecha(s.fechaEvento)}${s.horaEvento ? ` a las ${s.horaEvento} hs` : ""}`,
         `*Teléfono:* ${s.telefono}`,
         s.email ? `*Email:* ${s.email}` : null,
         `*Departamento:* ${s.departamento}`,
