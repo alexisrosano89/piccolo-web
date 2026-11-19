@@ -25,15 +25,15 @@ const FactV1 = () => {
                                 <div className="fun-fact-style-one-content">
                                     <div className="fun-fact">
                                         <div className="counter">
-                                            <div className="timer"><CountUp end={500} enableScrollSpy /></div>
                                             <div className="operator">+</div>
+                                            <div className="timer"><CountUp end={2000} separator="." enableScrollSpy /></div>
                                         </div>
                                         <span className="medium">Eventos realizados</span>
                                     </div>
                                     <div className="fun-fact">
                                         <div className="counter">
-                                            <div className="timer"><CountUp end={18} enableScrollSpy /></div>
                                             <div className="operator">+</div>
+                                            <div className="timer"><CountUp end={18} enableScrollSpy /></div>
                                         </div>
                                         <span className="medium">Opciones en el menú</span>
                                     </div>

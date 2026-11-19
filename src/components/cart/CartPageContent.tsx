@@ -3,20 +3,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { removeFromCart, updateQuantity } from "../../store/slices/cartSlice";
 import { toast } from "react-toastify";
+import { GROUP_DISCOUNTS, MIN_PERSONAS_SENA, calcularLinea, calcularTotales, estadoSena, mensajeMinimoSena } from "../../utils/presupuesto";
+import QtyStepper from "../select/QtyStepper";
+
+// Para el aviso, de menor a mayor: +50, +100, +150.
+const ESCALONES = [...GROUP_DISCOUNTS].reverse();
 
 const CartPageContent = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootState) => state.cart.items);
 
-    const subtotal = cartItems.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-    );
+    const { subtotal, descuento, total } = calcularTotales(cartItems);
+    const sena = estadoSena(cartItems);
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Producto quitado del presupuesto");
+        toast.error("Producto eliminado del presupuesto");
     };
 
     const handleQuantityChange = (id: number, quantity: number) => {
@@ -28,13 +31,17 @@ const CartPageContent = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
+                        {/* Info: descuentos por cantidad de invitados (se aplican solos, ver utils/presupuesto.ts) */}
+                        <p className="woocommerce-info group-discounts-note">
+                            Descuentos por cantidad de invitados: {ESCALONES.map(d => `+${d.personas} personas, ${d.descuento}%`).join(" · ")}. Válido para menú principal.
+                        </p>
                         <div className="shop-cart-info">
                             <form className="woocommerce-cart-form">
                                 <table className="shop-cart-table">
                                     <thead>
                                         <tr>
-                                            <th>Quitar</th>
-                                            <th>Foto</th>
+                                            <th aria-label="Quitar"></th>
+                                            <th aria-label="Foto"></th>
                                             <th>Menú</th>
                                             <th>Precio p/p</th>
                                             <th>Cantidad</th>
@@ -68,64 +75,86 @@ const CartPageContent = () => {
                                                 </td>
                                                 <td className="product-price">${item.price}</td>
                                                 <td className="product-quantity">
-                                                    <input
-                                                        type="number"
+                                                    <QtyStepper
                                                         value={item.quantity}
-                                                        title="Cantidad"
-                                                        min={1}
-                                                        step={1}
-                                                        onChange={(e) =>
-                                                            handleQuantityChange(
-                                                                item.id,
-                                                                Number(e.target.value)
-                                                            )
-                                                        }
+                                                        onChange={(n) => handleQuantityChange(item.id, n)}
                                                     />
                                                 </td>
                                                 <td className="product-subtotal">
-                                                    ${(item.price * item.quantity).toFixed(0)}
+                                                    {(() => {
+                                                        const linea = calcularLinea(item);
+                                                        if (!linea.porcentaje) return `$${linea.bruto.toFixed(0)}`;
+                                                        return (
+                                                            <span className="line-discount">
+                                                                <del>${linea.bruto.toFixed(0)}</del>
+                                                                <span>${linea.neto.toFixed(0)}</span>
+                                                                <small>−{linea.porcentaje}%</small>
+                                                            </span>
+                                                        );
+                                                    })()}
                                                 </td>
                                             </tr>
                                         ))}
+                                        {descuento > 0 && (
+                                            <>
+                                                <tr className="cart-subtotal-row">
+                                                    <td colSpan={5} className="text-end">Subtotal</td>
+                                                    <td className="product-subtotal">${subtotal.toFixed(0)}</td>
+                                                </tr>
+                                                <tr className="cart-subtotal-row cart-discount-row">
+                                                    <td colSpan={5} className="text-end">Descuento por cantidad</td>
+                                                    <td className="product-subtotal">−${descuento.toFixed(0)}</td>
+                                                </tr>
+                                            </>
+                                        )}
+                                        <tr className="cart-total-row">
+                                            <th colSpan={5} className="text-end">Total</th>
+                                            <th className="product-subtotal">${total.toFixed(0)}</th>
+                                        </tr>
                                         <tr>
                                             <td colSpan={6} className="actions">
-                                                <div className="coupon">
-                                                    <input type="text" placeholder="Código de descuento" />
-                                                    <button type="submit">Aplicar</button>
-                                                </div>
-                                                <Link to="/reservar">Señar fecha</Link>
+                                                {sena.habilitada ? (
+                                                    <Link to="/reservar">Señar fecha</Link>
+                                                ) : (
+                                                    <span className="sena-disabled" aria-disabled="true" title={mensajeMinimoSena(sena.faltan)}>Señar fecha</span>
+                                                )}
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </form>
                         </div>
-                        <div className="shop-cart-totals mt-50">
-                            <h2>Total del presupuesto</h2>
-                            <div className="table-responsive table-bordered">
-                                <table className="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Subtotal</th>
-                                            <th scope="col">${subtotal.toFixed(0)}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Traslado</th>
-                                            <td>
-                                                <p>Sin costo dentro de Montevideo y Ciudad de la Costa.</p>
-                                                <p>Para otras zonas, consultanos por WhatsApp.</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Total</th>
-                                            <td>${subtotal.toFixed(0)}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                        {/* Banner: mínimo de personas para señar, con progreso */}
+                        {!sena.habilitada && (
+                            <div className="sena-banner">
+                                <div className="sena-banner-icon">
+                                    <i className="fas fa-users" />
+                                </div>
+                                <div className="sena-banner-body">
+                                    <h4>
+                                        {sena.faltan === 1 ? "Te falta 1 persona" : `Te faltan ${sena.faltan} personas`} para señar la fecha
+                                    </h4>
+                                    <p>
+                                        El mínimo es de {MIN_PERSONAS_SENA} personas en menús principales. Podés combinar distintos menús.
+                                    </p>
+                                    <div
+                                        className="sena-banner-progress"
+                                        role="progressbar"
+                                        aria-valuemin={0}
+                                        aria-valuemax={MIN_PERSONAS_SENA}
+                                        aria-valuenow={sena.personas}
+                                        aria-label="Personas en menús principales"
+                                    >
+                                        <span style={{ width: `${Math.min(100, (sena.personas / MIN_PERSONAS_SENA) * 100)}%` }} />
+                                    </div>
+                                    <small>{sena.personas} de {MIN_PERSONAS_SENA} personas</small>
+                                </div>
+                                <Link to="/cotizar" className="btn btn-theme btn-md animation sena-banner-btn">
+                                    Agregar menús
+                                </Link>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>

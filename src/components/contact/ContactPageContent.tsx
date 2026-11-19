@@ -27,7 +27,7 @@ const ContactPageContent = ({ title, text }: DataType) => {
                                                 </div>
                                                 <div className="content">
                                                     <h5 className="title">WhatsApp</h5>
-                                                    <a href="https://wa.me/59894610637" target="_blank" rel="noreferrer">+598 094 610 637</a>
+                                                    <a href="https://wa.me/59894610637" target="_blank" rel="noreferrer">+598 94 610 637</a>
                                                 </div>
                                             </li>
                                             <li>

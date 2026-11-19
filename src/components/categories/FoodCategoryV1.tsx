@@ -42,7 +42,7 @@ const FoodCategoryV1 = () => {
                                     {/* Single Item */}
                                     <SwiperSlide className="swiper-slide">
                                         <div className="food-cat-item">
-                                            <Link to="/cotizar" style={{ backgroundImage: 'url(/assets/img/category/1.jpg)' }}>
+                                            <Link to="/cotizar?categoria=pizzas" style={{ backgroundImage: 'url(/assets/img/category/1.jpg)' }}>
                                                 <h4>Pizzas</h4>
                                                 <span>5 opciones</span>
                                             </Link>
@@ -52,7 +52,7 @@ const FoodCategoryV1 = () => {
                                     {/* Single Item */}
                                     <SwiperSlide className="swiper-slide">
                                         <div className="food-cat-item">
-                                            <Link to="/cotizar" style={{ backgroundImage: 'url(/assets/img/category/2.jpg)' }}>
+                                            <Link to="/cotizar?categoria=chivitos" style={{ backgroundImage: 'url(/assets/img/category/2.jpg)' }}>
                                                 <h4>Chivitos</h4>
                                                 <span>3 opciones</span>
                                             </Link>
@@ -62,7 +62,7 @@ const FoodCategoryV1 = () => {
                                     {/* Single Item */}
                                     <SwiperSlide className="swiper-slide">
                                         <div className="food-cat-item">
-                                            <Link to="/cotizar" style={{ backgroundImage: 'url(/assets/img/category/3.jpg)' }}>
+                                            <Link to="/cotizar?categoria=asado" style={{ backgroundImage: 'url(/assets/img/category/3.jpg)' }}>
                                                 <h4>Asado</h4>
                                                 <span>2 opciones</span>
                                             </Link>
@@ -72,7 +72,7 @@ const FoodCategoryV1 = () => {
                                     {/* Single Item */}
                                     <SwiperSlide className="swiper-slide">
                                         <div className="food-cat-item">
-                                            <Link to="/cotizar" style={{ backgroundImage: 'url(/assets/img/category/4.jpg)' }}>
+                                            <Link to="/cotizar?categoria=complementos" style={{ backgroundImage: 'url(/assets/img/category/4.jpg)' }}>
                                                 <h4>Complementos</h4>
                                                 <span>8 opciones</span>
                                             </Link>

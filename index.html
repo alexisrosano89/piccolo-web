@@ -7,7 +7,111 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piccolo | Cocina Artesanal</title>
+  <meta name="theme-color" content="#072b31" />
+
+  <!-- Valores por defecto. Cada página los actualiza (src/components/seo/Seo.tsx). -->
+  <title>Piccolo Cocina Artesanal | Catering con pizzas a la leña para eventos</title>
+  <meta name="description" content="Catering artesanal para eventos en Montevideo, Canelones y Maldonado: pizzas a la leña, chivitos, asado y más, con personal incluido. También delivery. Pedí tu presupuesto online." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tarjeta al compartir el link (WhatsApp, Facebook, Instagram, X). Estas plataformas no ejecutan
+       JavaScript, así que siempre muestran estos valores. %SITE_URL% lo reemplaza vite.config.ts. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_UY" />
+  <meta property="og:site_name" content="Piccolo Cocina Artesanal" />
+  <meta property="og:title" content="Piccolo Cocina Artesanal | Catering con pizzas a la leña para eventos" />
+  <meta property="og:description" content="Pizzas a la leña, chivitos, asado y más para tu evento, con personal incluido. Pedí tu presupuesto online." />
+  <meta property="og:url" content="%SITE_URL%/" />
+  <meta property="og:image" content="%SITE_URL%/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Pizza a la leña de Piccolo Cocina Artesanal" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Piccolo Cocina Artesanal | Catering con pizzas a la leña para eventos" />
+  <meta name="twitter:description" content="Pizzas a la leña, chivitos, asado y más para tu evento, con personal incluido. Pedí tu presupuesto online." />
+  <meta name="twitter:image" content="%SITE_URL%/assets/img/og-image.jpg" />
+
+  <!-- Ficha de negocio para Google (schema.org). Si cambian dirección, teléfonos u horarios,
+       actualizalos acá también (además del footer y /contacto). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "%SITE_URL%/#negocio",
+    "name": "Piccolo Cocina Artesanal",
+    "description": "Catering artesanal para eventos con pizzas a la leña, chivitos, asado y más, con personal incluido. También delivery y take away.",
+    "url": "%SITE_URL%/",
+    "logo": "%SITE_URL%/assets/img/logo-piccolo-rojo.png",
+    "image": "%SITE_URL%/assets/img/og-image.jpg",
+    "telephone": "+59898314477",
+    "email": "info@piccolo.com.uy",
+    "priceRange": "$$",
+    "servesCuisine": ["Pizza", "Parrilla", "Chivitos", "Comida casera"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cielo Azul 5611 esquina Rambla",
+      "addressLocality": "Shangrilá, Ciudad de la Costa",
+      "addressRegion": "Canelones",
+      "addressCountry": "UY"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.8546593,
+      "longitude": -55.9885045
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "19:30",
+        "closes": "23:30"
+      }
+    ],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Montevideo" },
+      { "@type": "AdministrativeArea", "name": "Canelones" },
+      { "@type": "AdministrativeArea", "name": "Maldonado" }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "Eventos y catering",
+        "telephone": "+59898314477",
+        "availableLanguage": "es"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "Delivery",
+        "telephone": "+59894610637",
+        "availableLanguage": "es"
+      }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Catering para eventos",
+          "description": "Pizzas a la leña, chivitos y asado cocinados en el lugar del evento, con personal para servir. Mínimo 15 invitados.",
+          "areaServed": ["Montevideo", "Canelones", "Maldonado"]
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Delivery y take away",
+          "description": "Tortillas de papas y boniatos, gramajo, pizzas y calzones con masa de fermentación lenta. 10% de descuento en take away."
+        }
+      }
+    ],
+    "hasMenu": "%SITE_URL%/cotizar",
+    "sameAs": [
+      "https://facebook.com/piccolococinartesanal",
+      "https://instagram.com/piccolococina"
+    ]
+  }
+  </script>
 </head>
 
 <body>

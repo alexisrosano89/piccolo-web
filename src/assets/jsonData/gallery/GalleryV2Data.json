@@ -5,7 +5,8 @@
     },
     {
         "id": 2,
-        "thumb": "1.jpg"
+        "thumb": "1.jpg",
+        "video": "local-piccolo.mp4"
     },
     {
         "id": 3,

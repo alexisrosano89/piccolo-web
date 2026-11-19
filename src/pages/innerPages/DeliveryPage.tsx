@@ -1,3 +1,4 @@
+import Seo from "../../components/seo/Seo";
 import LayoutV5 from "../../components/layouts/LayoutV5";
 import ContactPageContent from "../../components/contact/ContactPageContent";
 import ProductV1 from "../../components/product/ProductV1";
@@ -5,6 +6,12 @@ import ProductV1 from "../../components/product/ProductV1";
 const DeliveryPage = () => {
     return (
         <>
+
+            <Seo
+                title="Delivery"
+                description="Delivery de Piccolo Cocina Artesanal: tortillas de papas y boniatos, gramajo, pizzas y calzones con masa de fermentación lenta."
+                path="/delivery"
+            />
             <LayoutV5 title="Delivery" breadCrumb="Delivery">
                 <ContactPageContent
                     title="Tortillas, Gramajo, Pizzas, Calzones, Papas y Boniatos."

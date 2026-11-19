@@ -14,21 +14,25 @@ const BrandV1 = () => {
                             </div>
                             <Swiper
                                 loop={true}
-                                slidesPerView={2}
-                                spaceBetween={30}
-                                autoplay={true}
+                                slidesPerView={3}
+                                spaceBetween={20}
+                                speed={500}
+                                autoplay={{
+                                    delay: 1100,
+                                    disableOnInteraction: false,
+                                }}
                                 breakpoints={{
                                     768: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 30,
-                                    },
-                                    992: {
                                         slidesPerView: 4,
                                         spaceBetween: 30,
                                     },
-                                    1400: {
+                                    992: {
                                         slidesPerView: 5,
-                                        spaceBetween: 60,
+                                        spaceBetween: 30,
+                                    },
+                                    1400: {
+                                        slidesPerView: 6,
+                                        spaceBetween: 40,
                                     }
                                 }}
                                 className="brand-style-one-carousel"

@@ -27,25 +27,39 @@ const notIncluded = [
 const IncludesSection = ({ sectionClass }: DataType) => {
     return (
         <>
-            <div className={`default-padding ${sectionClass ? sectionClass : ""}`}>
+            <div className={`includes-area default-padding ${sectionClass ? sectionClass : ""}`}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 mb-30">
-                            <div className="includes-box includes-yes">
-                                <h4><i className="fas fa-check-circle" /> Sí incluye</h4>
-                                <ul>
+                        <div className="col-lg-8 offset-lg-2">
+                            <div className="site-heading text-center">
+                                <h4 className="sub-title">El servicio</h4>
+                                <h2 className="title">¿Qué Incluye?</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-7 mb-30">
+                            <div className="includes-card includes-card-yes" data-aos="fade-up" data-aos-delay="100">
+                                <div className="includes-card-head">
+                                    <i className="fas fa-check" />
+                                    <h4>Sí incluye</h4>
+                                </div>
+                                <ul className="list-style-one includes-list">
                                     {included.map((item, index) => (
-                                        <li key={index}><i className="fas fa-check" /> {item}</li>
+                                        <li key={index}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-6 mb-30">
-                            <div className="includes-box includes-no">
-                                <h4><i className="fas fa-times-circle" /> No incluye</h4>
-                                <ul>
+                        <div className="col-lg-5 mb-30">
+                            <div className="includes-card includes-card-no" data-aos="fade-up" data-aos-delay="200">
+                                <div className="includes-card-head">
+                                    <i className="fas fa-times" />
+                                    <h4>No incluye</h4>
+                                </div>
+                                <ul className="includes-list">
                                     {notIncluded.map((item, index) => (
-                                        <li key={index}><i className="fas fa-times" /> {item}</li>
+                                        <li key={index}>{item}</li>
                                     ))}
                                 </ul>
                             </div>

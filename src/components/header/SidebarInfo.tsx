@@ -5,6 +5,7 @@ import SocialShareV3 from "../social/SocialShareV3";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../store/slices/cartSlice";
 import { RootState } from "../../store/store";
+import { MIN_PERSONAS_SENA, calcularTotales, estadoSena, mensajeMinimoSena } from "../../utils/presupuesto";
 
 interface HeaderSearchProps {
     closeInfoBar?: () => void;
@@ -30,11 +31,12 @@ const SidebarInfo: React.FC<HeaderSearchProps> = ({ closeInfoBar, isInfoOpen }) 
     const cartItems = useSelector((state: RootState) => state.cart.items);
 
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-    const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalAmount = calcularTotales(cartItems).total; // con descuento por cantidad
+    const sena = estadoSena(cartItems);
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Producto quitado del presupuesto");
+        toast.error("Producto eliminado del presupuesto");
     };
 
     return (
@@ -70,9 +72,10 @@ const SidebarInfo: React.FC<HeaderSearchProps> = ({ closeInfoBar, isInfoOpen }) 
                                             ))}
                                         </ul>
                                         <li className="total">
-                                            <span className="pull-right"><strong>Total</strong>: ${totalAmount.toFixed(0)}</span>
+                                            <span className="pull-right cart-total"><strong>Total</strong><strong>${totalAmount.toFixed(0)}</strong></span>
                                             <Link to="/presupuesto" className="btn btn-default btn-cart">Ver</Link>
-                                            <Link to="/reservar" className="btn btn-default btn-cart">Señar</Link>
+                                            <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena.faltan)}>Señar</Link>
+                                        {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas en menús principales para señar.</p>}
                                         </li>
                                     </>
                                 ) : (

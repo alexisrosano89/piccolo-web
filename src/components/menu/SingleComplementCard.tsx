@@ -1,6 +1,6 @@
+import { toastAgregado } from "../cart/toastAgregado";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import { addToCart } from "../../store/slices/cartSlice";
 import { slugify } from "../../assets/jsonData/menu/slugify";
 
@@ -29,7 +29,7 @@ const SingleComplementCard = ({ food }: { food: DataType }) => {
                 quantity: 1,
             })
         );
-        toast.success("Producto agregado al presupuesto");
+        toastAgregado();
     };
 
     return (

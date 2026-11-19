@@ -31,8 +31,8 @@ const WhyChooseV1 = () => {
                                             <img src={icon12} alt="Image Not Found" />
                                         </div>
                                         <div className="counter">
-                                            <div className="timer"> <CountUp end={500} /> </div>
                                             <div className="operator">+</div>
+                                            <div className="timer"> <CountUp end={2000} separator="." /> </div>
                                         </div>
                                         <span className="medium">Eventos realizados</span>
                                     </div>

@@ -1,7 +1,8 @@
+import { toastAgregado } from "../cart/toastAgregado";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import QtyStepper from "../select/QtyStepper";
 import { addToCart } from "../../store/slices/cartSlice";
 import { getMenuDetailsForTags } from "../../assets/jsonData/menu/MenuDetailData";
 import RelatedComplements from "./RelatedComplements";
@@ -52,7 +53,7 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
                 quantity,
             })
         );
-        toast.success("Producto agregado al presupuesto");
+        toastAgregado();
     };
 
     const detailBlocks = getMenuDetailsForTags(tags);
@@ -91,11 +92,7 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
                                     </div>
                                     <p>{text}</p>
                                     <div className="product-purchase-list">
-                                        <div className="qty-stepper">
-                                            <button type="button" onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</button>
-                                            <span>{quantity}</span>
-                                            <button type="button" onClick={() => setQuantity(q => q + 1)}>+</button>
-                                        </div>
+                                        <QtyStepper value={quantity} onChange={setQuantity} />
                                         <Link to="#" className="btn secondary btn-theme btn-sm animation" onClick={handleAddToCart}>
                                             <i className="fas fa-shopping-cart" />
                                             Agregar al presupuesto

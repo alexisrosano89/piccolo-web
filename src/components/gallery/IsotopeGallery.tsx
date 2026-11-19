@@ -39,7 +39,27 @@ const IsotopeGallery = () => {
                         speed={() => 800}
                         easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
                     >
-                        {GalleryV2Data.map(gallery =>
+                        {GalleryV2Data.map(gallery => gallery.video ? (
+                            // Ítem de video: se reproduce solo, en silencio y en loop, en el mismo lugar que la foto
+                            <div className="pf-item grid-item" data-aos="fade-up" data-aos-delay="100" key={gallery.id}>
+                                <div className="gallery-style-one">
+                                    <div className="item gallery-video">
+                                        <video
+                                            src={`/assets/video/${gallery.video}`}
+                                            width={556}
+                                            height={1010}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            preload="metadata"
+                                            onLoadedMetadata={handleImageLoad}
+                                            onError={handleImageLoad}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
                             <div className="pf-item grid-item" data-aos="fade-up" data-aos-delay="100" key={gallery.id}>
                                 <div className="gallery-style-one">
                                     <div className="item">
@@ -52,7 +72,7 @@ const IsotopeGallery = () => {
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        ))}
                     </PhotoProvider>
                 </div>
             </div>

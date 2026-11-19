@@ -21,7 +21,7 @@ const BannerV2 = () => {
                 <Swiper
                     direction={"horizontal"}
                     loop={true}
-                    speed={3000}
+                    speed={1200}
                     autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
@@ -45,7 +45,8 @@ const BannerV2 = () => {
                     <div className="swiper-wrapper">
 
                         {/* Single Item */}
-                        <SwiperSlide className="bg-cover shadow dark" style={{ background: 'url(/assets/img/banner/parrilla.webp)' }}>
+                        <SwiperSlide className="bg-cover shadow dark" style={{ backgroundImage: 'url(/assets/img/banner/eventos.png)' }}>
+                            <div className="banner-bg-blur" />
                             <div className="container">
                                 <div className="content">
                                     <div className="row align-center">
@@ -55,7 +56,7 @@ const BannerV2 = () => {
                                                 Llevate los aplausos en tu evento con nuestra rica cocina y buena energía. Cambiamos tu estrés por relax. Ya no tenés que estar en todo para relajarte.
                                             </p>
                                             <div className="button mt-40">
-                                                <Link className="btn btn-theme btn-md animation" to="/cotizar">Cotizar <i className="fas fa-dollar-sign" /></Link>
+                                                <Link className="btn btn-theme btn-md animation" to="/cotizar">Cotizar <i className="fas fa-calculator" /></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +65,8 @@ const BannerV2 = () => {
                         </SwiperSlide>
 
                         {/* Single Item */}
-                        <SwiperSlide className="bg-cover shadow dark" style={{ background: 'url(/assets/img/banner/parrilla.webp)' }}>
+                        <SwiperSlide className="bg-cover shadow dark" style={{ backgroundImage: 'url(/assets/img/banner/delivery.png)' }}>
+                            <div className="banner-bg-blur" />
                             <div className="container">
                                 <div className="content">
                                     <div className="row align-center">

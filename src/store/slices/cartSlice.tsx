@@ -8,6 +8,9 @@ interface CartItem {
     thumb: string;
 }
 
+// Máximo de 3 cifras por ítem (igual que el selector de cantidad).
+const MAX_QUANTITY = 999;
+
 interface CartState {
     items: CartItem[];
 }
@@ -23,7 +26,7 @@ const cartSlice = createSlice({
         addToCart: (state, action: PayloadAction<CartItem>) => {
             const existing = state.items.find(item => item.id === action.payload.id);
             if (existing) {
-                existing.quantity += action.payload.quantity;
+                existing.quantity = Math.min(MAX_QUANTITY, existing.quantity + action.payload.quantity);
             } else {
                 state.items.push(action.payload);
             }
@@ -34,7 +37,7 @@ const cartSlice = createSlice({
         updateQuantity: (state, action: PayloadAction<{ id: number; quantity: number }>) => {
             const item = state.items.find(i => i.id === action.payload.id);
             if (item) {
-                item.quantity = action.payload.quantity;
+                item.quantity = Math.min(MAX_QUANTITY, Math.max(1, action.payload.quantity));
             }
         },
         clearCart: state => {

@@ -8,9 +8,10 @@ interface Option {
 interface CustomSelectProps {
     options: Option[];
     selectValue: number;
+    onChange?: (option: Option) => void;
 }
 
-const CustomSelect: React.FC<CustomSelectProps> = ({ options, selectValue }) => {
+const CustomSelect: React.FC<CustomSelectProps> = ({ options, selectValue, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState<Option>(options[selectValue]);
 
@@ -21,6 +22,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ options, selectValue }) => 
     const handleOptionSelect = (option: Option) => {
         setSelectedOption(option);
         setIsOpen(false);
+        onChange?.(option);
     };
 
     const selectRef = useRef<HTMLDivElement>(null);
