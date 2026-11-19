@@ -5585,6 +5585,27 @@ ul.list-style-one li::after {
 	padding: 200px 0;
 }
 
+/* Video de YouTube de fondo (BackgroundVideo): cubre la sección como "background-size: cover" */
+.video-bg-iframe {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+	container-type: size;
+	z-index: 0;
+}
+
+.video-bg-iframe iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* 16:9 que siempre cubre el contenedor, sea más ancho o más alto */
+	width: max(100cqw, 177.78cqh);
+	height: max(56.25cqw, 100cqh);
+	transform: translate(-50%, -50%);
+	border: 0;
+}
+
 .video-bg-content::after {
 	position: absolute;
 	left: 0;
