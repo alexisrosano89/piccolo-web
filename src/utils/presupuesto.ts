@@ -13,6 +13,9 @@ import FoodMenuData from "../assets/jsonData/menu/FoodMenuData.json";
 // Los menús se guardan en el carrito con este offset en el id (ver componentes de menu/).
 export const MENU_CART_ID_OFFSET = 9000;
 
+/** "$21.137": pesos sin decimales y con punto de miles. */
+export const formatPesos = (n: number) => `$${Math.round(n).toLocaleString("es-UY")}`;
+
 export const GROUP_DISCOUNTS = [
     { personas: 150, descuento: 15 },
     { personas: 100, descuento: 10 },

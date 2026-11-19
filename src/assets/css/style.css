@@ -6038,6 +6038,25 @@ ul.list-style-one li::after {
 	}
 }
 
+/* Globito del carrito: muestra el total en pesos, arriba a la derecha del ícono */
+.attr-nav > ul > li > a span.badge.badge-total {
+	width: auto;
+	min-width: 0;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 10px;
+	border-radius: 14px;
+	top: -8px;
+	bottom: auto;
+	right: auto;
+	left: calc(100% - 16px);
+	transform: none;
+	font-size: 13px;
+	white-space: nowrap;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
 /* Total del carrito desplegable (encabezado y panel lateral) */
 .cart-total {
 	font-size: 20px;

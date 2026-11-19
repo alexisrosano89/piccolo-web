@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { removeFromCart, updateQuantity } from "../../store/slices/cartSlice";
-import { GROUP_DISCOUNTS, MIN_PERSONAS_SENA, calcularLinea, calcularTotales, estadoSena, mensajeMinimoSena, cantidadMinima } from "../../utils/presupuesto";
+import { GROUP_DISCOUNTS, MIN_PERSONAS_SENA, calcularLinea, calcularTotales, estadoSena, mensajeMinimoSena, cantidadMinima, formatPesos } from "../../utils/presupuesto";
 import QtyStepper from "../select/QtyStepper";
 
 // Para el aviso, de menor a mayor: +50, +100, +150.
@@ -85,7 +85,7 @@ const CartPageContent = () => {
                                                         {item.title}
                                                     </Link>
                                                 </td>
-                                                <td className="product-price">${item.price}</td>
+                                                <td className="product-price">{formatPesos(item.price)}</td>
                                                 <td className="product-quantity">
                                                     <QtyStepper
                                                         value={item.quantity}
@@ -96,11 +96,11 @@ const CartPageContent = () => {
                                                 <td className="product-subtotal">
                                                     {(() => {
                                                         const linea = calcularLinea(item);
-                                                        if (!linea.porcentaje) return `$${linea.bruto.toFixed(0)}`;
+                                                        if (!linea.porcentaje) return formatPesos(linea.bruto);
                                                         return (
                                                             <span className="line-discount">
-                                                                <del>${linea.bruto.toFixed(0)}</del>
-                                                                <span>${linea.neto.toFixed(0)}</span>
+                                                                <del>{formatPesos(linea.bruto)}</del>
+                                                                <span>{formatPesos(linea.neto)}</span>
                                                                 <small>−{linea.porcentaje}%</small>
                                                             </span>
                                                         );
@@ -112,17 +112,17 @@ const CartPageContent = () => {
                                             <>
                                                 <tr className="cart-subtotal-row">
                                                     <td colSpan={5} className="text-end">Subtotal</td>
-                                                    <td className="product-subtotal">${subtotal.toFixed(0)}</td>
+                                                    <td className="product-subtotal">{formatPesos(subtotal)}</td>
                                                 </tr>
                                                 <tr className="cart-subtotal-row cart-discount-row">
                                                     <td colSpan={5} className="text-end">Descuento por cantidad</td>
-                                                    <td className="product-subtotal">−${descuento.toFixed(0)}</td>
+                                                    <td className="product-subtotal">−{formatPesos(descuento)}</td>
                                                 </tr>
                                             </>
                                         )}
                                         <tr className="cart-total-row">
                                             <th colSpan={5} className="text-end">Total</th>
-                                            <th className="product-subtotal">${total.toFixed(0)}</th>
+                                            <th className="product-subtotal">{formatPesos(total)}</th>
                                         </tr>
                                         <tr>
                                             <td colSpan={6} className="actions">

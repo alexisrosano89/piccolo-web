@@ -1,5 +1,6 @@
 import { jsPDF } from "jspdf";
 import { METODOS_SENA, SENA_IMPORTANTE, SENA_MONTO } from "./sena";
+import { formatPesos } from "./presupuesto";
 
 export interface SolicitudItem {
     title: string;
@@ -35,7 +36,7 @@ const GRIS: [number, number, number] = [110, 110, 110];
 export const formatFecha = (d: Date | null) =>
     d ? d.toLocaleDateString("es-UY", { day: "2-digit", month: "2-digit", year: "numeric" }) : "-";
 
-export const formatPesos = (n: number) => `$${Math.round(n).toLocaleString("es-UY")}`;
+export { formatPesos }; // vive en presupuesto.ts (liviano), se re-exporta para el PDF
 
 /** Número corto y legible para identificar la solicitud, p. ej. P-251119-1432. */
 export const nuevoNumeroSolicitud = (d = new Date()) => {

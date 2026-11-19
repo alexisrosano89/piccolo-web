@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { MIN_PERSONAS_SENA, calcularTotales, estadoSena, mensajeMinimoSena } from "../../utils/presupuesto";
+import { formatPesos } from "../../utils/presupuesto";
 import { removeFromCart } from "../../store/slices/cartSlice";
 
 const HeaderCart = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootState) => state.cart.items);
-
-    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     const totalAmount = calcularTotales(cartItems).total; // con descuento por cantidad
     const sena = estadoSena(cartItems);
 
@@ -26,7 +25,7 @@ const HeaderCart = () => {
                     <li className="dropdown">
                         <Link to="#" className="dropdown-toggle" data-toggle="dropdown">
                             <i className="far fa-shopping-cart" />
-                            <span className="badge">{totalItems}</span>
+                            {cartItems.length > 0 && <span className="badge badge-total">{formatPesos(totalAmount)}</span>}
                         </Link>
 
                         <ul className="dropdown-menu cart-list">
@@ -45,13 +44,13 @@ const HeaderCart = () => {
                                                 </div>
                                                 <div className="info">
                                                     <h6>{item.title}</h6>
-                                                    <p>{item.quantity}x - <span className="price">${item.price}</span></p>
+                                                    <p>{item.quantity}x - <span className="price">{formatPesos(item.price)}</span></p>
                                                 </div>
                                             </li>
                                         ))}
                                     </ul>
                                     <li className="total">
-                                        <span className="pull-right cart-total"><strong>Total</strong><strong>${totalAmount.toFixed(0)}</strong></span>
+                                        <span className="pull-right cart-total"><strong>Total</strong><strong>{formatPesos(totalAmount)}</strong></span>
                                         <Link to="/presupuesto" className="btn btn-default btn-cart">Ver</Link>
                                         <Link to={sena.habilitada ? "/reservar" : "/presupuesto"} className={`btn btn-default btn-cart${sena.habilitada ? "" : " btn-cart-disabled"}`} title={sena.habilitada ? undefined : mensajeMinimoSena(sena)}>Señar</Link>
                                         {!sena.habilitada && <p className="cart-sena-minimo">Mínimo {MIN_PERSONAS_SENA} personas por menú principal para señar.</p>}
