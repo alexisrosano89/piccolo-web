@@ -84,6 +84,11 @@ const CartPageContent = () => {
                                                     <Link to="#" >
                                                         {item.title}
                                                     </Link>
+                                                    {calcularLinea(item).porcentaje > 0 && (
+                                                        <span className="line-discount-note">
+                                                            <i className="fas fa-tag" aria-hidden="true" /> {calcularLinea(item).porcentaje}% de descuento
+                                                        </span>
+                                                    )}
                                                 </td>
                                                 <td className="product-price">{formatPesos(item.price)}</td>
                                                 <td className="product-quantity">
@@ -93,19 +98,8 @@ const CartPageContent = () => {
                                                         min={cantidadMinima(item)}
                                                     />
                                                 </td>
-                                                <td className="product-subtotal">
-                                                    {(() => {
-                                                        const linea = calcularLinea(item);
-                                                        if (!linea.porcentaje) return formatPesos(linea.bruto);
-                                                        return (
-                                                            <span className="line-discount">
-                                                                <del>{formatPesos(linea.bruto)}</del>
-                                                                <span>{formatPesos(linea.neto)}</span>
-                                                                <small>−{linea.porcentaje}%</small>
-                                                            </span>
-                                                        );
-                                                    })()}
-                                                </td>
+                                                {/* Precio de lista: el descuento se resta una sola vez, abajo, para que la cuenta cierre */}
+                                                <td className="product-subtotal">{formatPesos(item.price * item.quantity)}</td>
                                             </tr>
                                         ))}
                                         {descuento > 0 && (
@@ -115,7 +109,7 @@ const CartPageContent = () => {
                                                     <td className="product-subtotal">{formatPesos(subtotal)}</td>
                                                 </tr>
                                                 <tr className="cart-subtotal-row cart-discount-row">
-                                                    <td colSpan={5} className="text-end">Descuento por cantidad</td>
+                                                    <td colSpan={5} className="text-end">Descuento total</td>
                                                     <td className="product-subtotal">−{formatPesos(descuento)}</td>
                                                 </tr>
                                             </>

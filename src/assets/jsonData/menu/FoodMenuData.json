@@ -204,7 +204,7 @@
         "title": "Alfajores",
         "text": "Alfajores artesanales para sumar a tu evento.",
         "tags": [
-            "Complemento"
+            "Postres"
         ],
         "price": 85,
         "icon": "fa fa-heart",
@@ -223,7 +223,7 @@
         "title": "Leña",
         "text": "Leña para el horno y la parrilla.",
         "tags": [
-            "Complemento"
+            "Extras"
         ],
         "price": 95,
         "icon": "fa fa-heart",
@@ -242,7 +242,7 @@
         "title": "Fainá o Focaccia",
         "text": "A elección, fainá o focaccia casera.",
         "tags": [
-            "Complemento"
+            "Panificados"
         ],
         "price": 115,
         "icon": "fa fa-heart",
@@ -261,7 +261,7 @@
         "title": "Shots Dulces",
         "text": "Shots dulces para cerrar el evento.",
         "tags": [
-            "Complemento"
+            "Postres"
         ],
         "price": 125,
         "icon": "fa fa-heart",
@@ -280,7 +280,7 @@
         "title": "Refrescos",
         "text": "Refrescos para acompañar el menú.",
         "tags": [
-            "Complemento"
+            "Bebidas"
         ],
         "price": 155,
         "icon": "fa fa-heart",
@@ -299,7 +299,7 @@
         "title": "Tabla Clásica",
         "text": "Guacamole, alioli de remolacha, quesos, fiambres, aceitunas y frutos secos.",
         "tags": [
-            "Complemento"
+            "Picadas"
         ],
         "price": 245,
         "icon": "fa fa-heart",
@@ -318,7 +318,7 @@
         "title": "Tabla Gourmet",
         "text": "Tostaditas, guacamole, quesos premium, fiambres, brochettes capresse y frutos secos.",
         "tags": [
-            "Complemento"
+            "Picadas"
         ],
         "price": 295,
         "icon": "fa fa-heart",
@@ -337,7 +337,7 @@
         "title": "Cerveza",
         "text": "Cerveza para sumar a tu evento.",
         "tags": [
-            "Complemento"
+            "Bebidas"
         ],
         "price": 295,
         "icon": "fa fa-heart",

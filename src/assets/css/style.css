@@ -11430,37 +11430,29 @@ nav.navbar.always-white-bg .attr-nav > ul > li.dropdown > a.dropdown-toggle i {
 	margin-bottom: 30px;
 }
 
-/* /presupuesto: subtotal de un menú con descuento por cantidad */
-.line-discount {
-	display: inline-flex;
-	flex-direction: column;
-	align-items: center;
-	line-height: 1.3;
-}
-
-.line-discount del {
-	font-size: 14px;
-	opacity: 0.6;
-}
-
-.line-discount span {
-	font-weight: 700;
-	color: var(--color-heading);
-}
-
-.line-discount small {
+/* /presupuesto: nota verde debajo del nombre del menú con descuento por cantidad */
+.line-discount-note {
+	display: block;
 	margin-top: 4px;
-	padding: 2px 8px;
-	border-radius: 20px;
-	background: var(--color-primary);
-	color: var(--white);
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 600;
+	color: #1e8449;
 }
 
+.line-discount-note i {
+	margin-right: 4px;
+	font-size: 12px;
+}
+
+/* /presupuesto: fila "Total" en negro */
+form.woocommerce-cart-form table tr.cart-total-row th {
+	color: #000;
+}
+
+/* Descuento: en verde, porque es algo a favor del cliente */
 .cart-discount-row td,
 .checkout-line-discount {
-	color: var(--color-primary);
+	color: #1e8449;
 	font-weight: 600;
 }
 
@@ -11875,6 +11867,42 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 .product-purchase-list .qty-stepper {
 	margin-right: 15px;
 	margin-top: 15px;
+}
+
+/* Página de cada menú: "Categoría: Asado" arriba del título */
+.single-product-contents .product-tags .product-tags-label {
+	font-weight: 400;
+	opacity: 0.75;
+	margin-right: 2px;
+}
+
+/* Página de cada menú: descripción y datos clave resumidos debajo del botón */
+.menu-summary {
+	margin-top: 30px;
+	padding-top: 25px;
+	border-top: 1px solid #e7e7e7;
+}
+
+.menu-summary-text p {
+	margin-bottom: 12px;
+}
+
+/* La página de cada menú aplica estilos genéricos a inputs y botones (margen, padding, ancho);
+   acá los anulamos para que el contador se vea igual que en las tarjetas. */
+.product-purchase-list .qty-stepper input {
+	width: 42px;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	display: block;
+}
+
+.product-purchase-list .qty-stepper button {
+	width: 32px;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
 }
 
 .menu-detail-blocks,
