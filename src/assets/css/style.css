@@ -87,19 +87,19 @@ Sidebar heading:  22px 'Jost', sans-serif
 	--font-optional: "Dancing Script", cursive;
 	--fontawesome: "Font Awesome 5 Pro";
 	--black: #000000;
-	--dark: #072b31;
-	--dark-secondary: #1f3844;
+	--dark: #221F1F; /* Negro cálido (marca) */
+	--dark-secondary: #2E2A2A;
 	--white: #ffffff;
-	--color-primary: #EB0029;
-	--color-secondary: #f76e2a;
-	--color-heading: #04000b;
+	--color-primary: #C1272D; /* Rojo Piccolo (marca) */
+	--color-secondary: #C1272D;
+	--color-heading: #221F1F; /* Negro cálido (marca) */
 	--color-paragraph: #666666;
 	--box-shadow-primary: -1px 3px 10px 0 rgba(0, 0, 0, 0.6);
 	--box-shadow-secondary: 0 10px 30px 0 rgba(44, 130, 237, 0.4);
 	--box-shadow-regular: 0px 2px 12px 0px #e7e7e7;
-	--bg-gray: #EBE9E6;
-	--bg-gray-secondary: #faf1df;
-	--bg-gradient: linear-gradient(45deg, var(--color-primary) 30%, #ffb800 100%);
+	--bg-gray: #FEF4E3; /* Crema (marca): fondos secundarios */
+	--bg-gray-secondary: #FED39F; /* Durazno (marca) */
+	--bg-gradient: linear-gradient(45deg, var(--color-primary) 30%, #FED39F 100%);
 }
 
 
@@ -5633,18 +5633,37 @@ ul.list-style-one li::after {
 	z-index: 1;
 }
 
+/* Degradé oscuro de abajo hacia arriba para que el texto se lea sobre cualquier foto */
+.food-cat-item a::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.05) 100%);
+	transition: background 0.3s ease;
+}
+
+.food-cat-item a:hover::before {
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.15) 100%);
+}
+
 .food-cat-item a h4 {
 	text-transform: uppercase;
 	margin-bottom: 10px;
+	color: var(--white);
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .food-cat-item a span {
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	display: inline-block;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	background: rgba(0, 0, 0, 0.35);
+	color: var(--white);
 	text-align: center;
 	border-radius: 30px;
 	text-transform: uppercase;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 500;
 	padding: 2px 20px;
 }
 
@@ -6128,18 +6147,18 @@ form.checkout-form .form-group textarea.checkout-comments {
 	margin-bottom: 20px;
 	padding: 14px 20px;
 	border-radius: 12px;
-	background: #e8f7ee;
-	border: 1px solid #a8dcbb;
+	background: #E6F2EB;
+	border: 1px solid #9CC9B0;
 }
 
 .discount-banner i {
 	flex-shrink: 0;
 	font-size: 18px;
-	color: #1e8449;
+	color: #056738;
 }
 
 .discount-banner strong {
-	color: #1b6b3c;
+	color: #045A30;
 }
 
 .checkout-summary-total th {
@@ -6170,7 +6189,7 @@ form.checkout-form .form-group textarea.checkout-comments {
 /* /reservar: recuadro "¿Cómo señar? $2000" con los datos de pago */
 .sena-info {
 	margin: 30px 0 25px;
-	border: 2px solid #f3c9d1;
+	border: 2px solid #FED39F;
 	border-radius: 20px;
 	background: var(--white);
 	overflow: hidden;
@@ -6182,7 +6201,7 @@ form.checkout-form .form-group textarea.checkout-comments {
 	justify-content: space-between;
 	gap: 15px;
 	padding: 20px 30px;
-	background: #fdecef;
+	background: #FEF4E3;
 }
 
 .sena-info-head h4 {
@@ -6282,8 +6301,8 @@ form.checkout-form .form-group textarea.checkout-comments {
 
 .sena-info-important {
 	padding: 15px 30px 20px;
-	border-top: 2px solid #f3c9d1;
-	background: #fffafa;
+	border-top: 2px solid #FED39F;
+	background: #FEF4E3;
 }
 
 .sena-info-important h6 {
@@ -6808,6 +6827,15 @@ ul.menu-type-list li {
 	background: var(--dark);
 	margin-bottom: 30px;
 	border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Foto de la tabla: llena el círculo */
+.menu-type-item .thumb img:first-child {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
 }
 
 .menu-type-item .thumb img:nth-child(2) {
@@ -10574,7 +10602,7 @@ ul.footer-social li a:hover {
 	-webkit-animation: spinner 1s infinite linear;
 	animation: spinner 1s infinite linear;
 	border-radius: 50%;
-	border: 2px solid rgba(235, 0, 41, 0.15);
+	border: 2px solid rgba(193, 39, 45, 0.15);
 	border-top-color: var(--color-primary);
 	height: 110px;
 	margin: auto;
@@ -11327,7 +11355,7 @@ ul.footer-social li a:hover {
 	height: 40px !important;
 	border-radius: 100%;
 	z-index: 2;
-	background-color: rgba(235, 0, 41, 0.5);
+	background-color: rgba(193, 39, 45, 0.5);
 	transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) background;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -11436,7 +11464,7 @@ nav.navbar.always-white-bg .attr-nav > ul > li.dropdown > a.dropdown-toggle i {
 	margin-top: 4px;
 	font-size: 13px;
 	font-weight: 600;
-	color: #1e8449;
+	color: #056738;
 }
 
 .line-discount-note i {
@@ -11452,7 +11480,7 @@ form.woocommerce-cart-form table tr.cart-total-row th {
 /* Descuento: en verde, porque es algo a favor del cliente */
 .cart-discount-row td,
 .checkout-line-discount {
-	color: #1e8449;
+	color: #056738;
 	font-weight: 600;
 }
 
@@ -11733,7 +11761,7 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	padding: 30px 35px;
 	border-radius: 20px;
 	background: var(--white);
-	border: 1px solid #f3c9d1;
+	border: 1px solid #FED39F;
 	border-left: 6px solid var(--color-primary);
 	box-shadow: var(--box-shadow-regular);
 }
@@ -11743,7 +11771,7 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	width: 64px;
 	height: 64px;
 	border-radius: 50%;
-	background: rgba(235, 0, 41, 0.1);
+	background: rgba(193, 39, 45, 0.1);
 	color: var(--color-primary);
 	display: flex;
 	align-items: center;
@@ -12105,7 +12133,7 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	height: 12px;
 	border-radius: 50%;
 	background: var(--color-primary);
-	box-shadow: 0 0 0 4px rgba(235, 0, 41, 0.15); /* --color-primary con transparencia */
+	box-shadow: 0 0 0 4px rgba(193, 39, 45, 0.15); /* --color-primary con transparencia */
 }
 
 .payment-timeline li::after {

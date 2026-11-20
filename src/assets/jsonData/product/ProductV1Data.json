@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "thumb": "1.jpg",
+        "thumb": "pizza.jpg",
         "delay": "100",
         "tags": [
             "Masa de fermentación lenta",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "thumb": "2.jpg",
+        "thumb": "pizza.jpg",
         "delay": "200",
         "tags": [
             "Masa de fermentación lenta",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "thumb": "3.jpg",
+        "thumb": "papas-y-boniatos.jpg",
         "delay": "400",
         "tags": [
             "Papas",
@@ -35,7 +35,7 @@
     },
     {
         "id": 4,
-        "thumb": "4.jpg",
+        "thumb": "gramajo.jpg",
         "delay": "600",
         "tags": [
             "Papas y boniatos",

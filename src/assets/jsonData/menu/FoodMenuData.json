@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "thumb": "1.jpg",
+        "thumb": "pizza.jpg",
         "delay": "100",
         "title": "Pizzas",
         "text": "Pizzas artesanales de masa de fermentación lenta, a elección entre nuestros sabores.",
@@ -20,7 +20,7 @@
     },
     {
         "id": 2,
-        "thumb": "2.jpg",
+        "thumb": "pizza.jpg",
         "delay": "200",
         "title": "Pizzas + Calzones",
         "text": "Combo de pizzas y calzones horneados a la leña.",
@@ -40,7 +40,7 @@
     },
     {
         "id": 3,
-        "thumb": "3.jpg",
+        "thumb": "papas-y-boniatos.jpg",
         "delay": "300",
         "title": "Pizzas + Papas y Boniatos",
         "text": "Pizzas acompañadas de papas y boniatos caseros en cuña.",
@@ -60,7 +60,7 @@
     },
     {
         "id": 4,
-        "thumb": "4.jpg",
+        "thumb": "chivito.jpg",
         "delay": "400",
         "title": "Chivitos + Papas y Boniatos",
         "text": "Chivitos completos con papas y boniatos caseros.",
@@ -80,7 +80,7 @@
     },
     {
         "id": 5,
-        "thumb": "5.jpg",
+        "thumb": "gramajo.jpg",
         "delay": "100",
         "title": "Pizzas + Gramajo",
         "text": "Pizzas acompañadas de nuestro gramajo casero.",
@@ -100,7 +100,7 @@
     },
     {
         "id": 6,
-        "thumb": "6.jpg",
+        "thumb": "tacos-y-quesadillas.jpg",
         "delay": "200",
         "title": "Pizzas + Tacos y Quesadillas",
         "text": "Pizzas junto a tacos y quesadillas Piccolo.",
@@ -120,7 +120,7 @@
     },
     {
         "id": 7,
-        "thumb": "7.jpg",
+        "thumb": "picada-de-asado.jpg",
         "delay": "300",
         "title": "Picada de Asado + Pizza o Gramajo",
         "text": "Picada de asado con chorizos y bondiola, a elección con pizza o gramajo.",
@@ -140,7 +140,7 @@
     },
     {
         "id": 8,
-        "thumb": "8.jpg",
+        "thumb": "chivito.jpg",
         "delay": "400",
         "title": "Chivitos + Pizzas o Gramajo",
         "text": "Chivitos completos a elección con pizza o gramajo.",
@@ -160,7 +160,7 @@
     },
     {
         "id": 9,
-        "thumb": "1.jpg",
+        "thumb": "chivito.jpg",
         "delay": "100",
         "title": "Chivitos + Tacos y Quesadillas",
         "text": "Chivitos completos junto a tacos y quesadillas.",
@@ -180,7 +180,7 @@
     },
     {
         "id": 10,
-        "thumb": "2.jpg",
+        "thumb": "picada-de-asado.jpg",
         "delay": "200",
         "title": "Asado Completo",
         "text": "Molleja, chorizos, provolone, colita, entraña, matambrito y vacío, con papas y boniatos.",
@@ -199,7 +199,7 @@
     },
     {
         "id": 11,
-        "thumb": "3.jpg",
+        "thumb": "shots-dulces.jpg",
         "delay": "100",
         "title": "Alfajores",
         "text": "Alfajores artesanales para sumar a tu evento.",
@@ -218,7 +218,7 @@
     },
     {
         "id": 12,
-        "thumb": "4.jpg",
+        "thumb": "pizza.jpg",
         "delay": "200",
         "title": "Leña",
         "text": "Leña para el horno y la parrilla.",
@@ -237,7 +237,7 @@
     },
     {
         "id": 13,
-        "thumb": "5.jpg",
+        "thumb": "pan-casero.jpg",
         "delay": "300",
         "title": "Fainá o Focaccia",
         "text": "A elección, fainá o focaccia casera.",
@@ -256,7 +256,7 @@
     },
     {
         "id": 14,
-        "thumb": "6.jpg",
+        "thumb": "shots-dulces.jpg",
         "delay": "400",
         "title": "Shots Dulces",
         "text": "Shots dulces para cerrar el evento.",
@@ -275,7 +275,7 @@
     },
     {
         "id": 15,
-        "thumb": "7.jpg",
+        "thumb": "cerveza.jpg",
         "delay": "100",
         "title": "Refrescos",
         "text": "Refrescos para acompañar el menú.",
@@ -294,7 +294,7 @@
     },
     {
         "id": 16,
-        "thumb": "8.jpg",
+        "thumb": "tabla-clasica.jpg",
         "delay": "200",
         "title": "Tabla Clásica",
         "text": "Guacamole, alioli de remolacha, quesos, fiambres, aceitunas y frutos secos.",
@@ -313,7 +313,7 @@
     },
     {
         "id": 17,
-        "thumb": "1.jpg",
+        "thumb": "tabla-clasica.jpg",
         "delay": "300",
         "title": "Tabla Gourmet",
         "text": "Tostaditas, guacamole, quesos premium, fiambres, brochettes capresse y frutos secos.",
@@ -332,7 +332,7 @@
     },
     {
         "id": 18,
-        "thumb": "2.jpg",
+        "thumb": "cerveza.jpg",
         "delay": "400",
         "title": "Cerveza",
         "text": "Cerveza para sumar a tu evento.",

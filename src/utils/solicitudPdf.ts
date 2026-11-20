@@ -30,7 +30,7 @@ export interface Solicitud {
 
 const LOGO_URL = "/assets/img/logo-piccolo-rojo.png";
 const LOGO_RATIO = 295 / 628; // alto / ancho del PNG
-const ROJO: [number, number, number] = [227, 24, 55];
+const ROJO: [number, number, number] = [193, 39, 45]; // Rojo Piccolo #C1272D
 const GRIS: [number, number, number] = [110, 110, 110];
 
 export const formatFecha = (d: Date | null) =>
@@ -213,7 +213,7 @@ export const generarSolicitudPdf = async (s: Solicitud): Promise<jsPDF> => {
     nuevaPaginaSiHaceFalta(altoCajaSena + 4);
 
     const yCaja = y - 5;
-    doc.setFillColor(253, 236, 239);
+    doc.setFillColor(254, 244, 227); // Crema #FEF4E3
     doc.roundedRect(M, yCaja, anchoCaja, altoCajaSena, 2, 2, "F");
 
     doc.setFont("helvetica", "bold");

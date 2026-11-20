@@ -1,6 +1,5 @@
-import illustration2 from "/assets/img/illustration/2.png";
-import illustration13 from "/assets/img/illustration/13.png";
-import illustration14 from "/assets/img/illustration/14.png";
+// Por ahora las tres tarjetas usan la foto de la tabla; cambiar cuando haya fotos propias de cada una.
+import fotoTablaClasica from "/assets/img/menu/tabla-clasica.jpg";
 import shape9 from "/assets/img/shape/9.png";
 import { Link } from "react-router-dom";
 
@@ -34,7 +33,7 @@ const TablasSection = ({ sectionClass }: DataType) => {
                         <div className="col-xl-4 col-md-6 menu-type-single mb-30">
                             <div className="menu-type-item active" data-aos="fade-up" data-aos-delay="100">
                                 <div className="thumb">
-                                    <img src={illustration2} alt="Image Not Found" />
+                                    <img src={fotoTablaClasica} alt="Tabla Clásica" />
                                     <img src={shape9} alt="Image Not Found" />
                                 </div>
                                 <div className="info">
@@ -48,7 +47,7 @@ const TablasSection = ({ sectionClass }: DataType) => {
                         <div className="col-xl-4 col-md-6 menu-type-single mb-30">
                             <div className="menu-type-item" data-aos="fade-up" data-aos-delay="200">
                                 <div className="thumb">
-                                    <img src={illustration13} alt="Image Not Found" />
+                                    <img src={fotoTablaClasica} alt="Tabla Gourmet" />
                                     <img src={shape9} alt="Image Not Found" />
                                 </div>
                                 <div className="info">
@@ -62,7 +61,7 @@ const TablasSection = ({ sectionClass }: DataType) => {
                         <div className="col-xl-4 col-md-6 menu-type-single mb-30">
                             <div className="menu-type-item" data-aos="fade-up" data-aos-delay="400">
                                 <div className="thumb">
-                                    <img src={illustration14} alt="Image Not Found" />
+                                    <img src={fotoTablaClasica} alt="Mesa de Bienvenida" />
                                     <img src={shape9} alt="Image Not Found" />
                                 </div>
                                 <div className="info">

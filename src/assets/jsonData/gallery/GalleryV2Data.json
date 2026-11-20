@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "thumb": "2.jpg"
+        "thumb": "evento-moza.jpg"
     },
     {
         "id": 2,
@@ -10,14 +10,14 @@
     },
     {
         "id": 3,
-        "thumb": "5.jpg"
+        "thumb": "tabla.jpg"
     },
     {
         "id": 4,
-        "thumb": "6.jpg"
+        "thumb": "picada.jpg"
     },
     {
         "id": 5,
-        "thumb": "3.jpg"
+        "thumb": "tacos.jpg"
     }
 ]

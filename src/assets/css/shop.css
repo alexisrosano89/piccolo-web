@@ -3618,7 +3618,7 @@ table.shop-cart-table tr td.actions .coupon input {
 
 /* Checkout */
 .woocommerce-info {
-	background: #c9c9dc;
+	background: #FED39F;
 	color: var(--color-heading);
 	padding: 15px 30px;
 	border-radius: 8px;
