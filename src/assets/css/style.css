@@ -11472,6 +11472,41 @@ nav.navbar.always-white-bg .attr-nav > ul > li.dropdown > a.dropdown-toggle i {
 	font-size: 12px;
 }
 
+/* /presupuesto mantiene los colores anteriores a la paleta de marca (pedido del dueño):
+   se redefinen las variables solo dentro de la página. */
+.cart-page {
+	--color-primary: #EB0029;
+	--color-secondary: #f76e2a;
+	--dark: #072b31;
+	--color-heading: #04000b;
+	--bg-gray: #EBE9E6;
+	--bg-gray-secondary: #faf1df;
+}
+
+.cart-page .woocommerce-info {
+	background: #c9c9dc;
+}
+
+/* Los botones sí usan el Rojo Piccolo, igual que en el resto del sitio */
+.cart-page table.shop-cart-table tr td.actions > a,
+.cart-page .btn-theme {
+	background: #C1272D;
+}
+
+.cart-page .line-discount-note,
+.cart-page .cart-discount-row td {
+	color: #1e8449;
+}
+
+.cart-page .sena-banner {
+	border-color: #f3c9d1;
+	border-left-color: #EB0029;
+}
+
+.cart-page .sena-banner-icon {
+	background: rgba(235, 0, 41, 0.1);
+}
+
 /* /presupuesto: fila "Total" en negro */
 form.woocommerce-cart-form table tr.cart-total-row th {
 	color: #000;
