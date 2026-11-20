@@ -64,7 +64,7 @@ const FoodSingleContent = ({ food }: { food: DataType }) => {
                                 <div className="product-thumb">
                                     <div className="item-box">
                                         <div className="product-item">
-                                            <img src={`/assets/img/menu/${thumb}`} alt={title} width={600} height={600} style={{ borderRadius: "50%" }} />
+                                            <img src={`/assets/img/menu/${thumb}`} alt={title} width={600} height={600} className="menu-single-photo" />
                                         </div>
                                     </div>
                                 </div>

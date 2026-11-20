@@ -11932,6 +11932,23 @@ nav.navbar.navbar-default.validnavs li.dropdown ul.dropdown-menu.cart-list li.to
 	margin-top: 15px;
 }
 
+/* Página de cada menú: foto cuadrada con esquinas suaves (en lugar del círculo), sin el recuadro de fondo */
+.validtheme-shop-single-area .product-details .product-thumb .product-item {
+	padding: 0;
+	background: none;
+}
+
+.menu-single-photo {
+	display: block;
+	width: 100%;
+	max-width: 520px;
+	margin: 0 auto;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
 /* Página de cada menú: "Categoría: Asado" arriba del título */
 .single-product-contents .product-tags .product-tags-label {
 	font-weight: 400;
