@@ -4200,6 +4200,27 @@ a.btn-round-animation.dark {
 	margin-bottom: 40px;
 }
 
+/* Slide del inicio: logo en lugar del título "Eventos" */
+.banner-style-one h2.banner-logo-title {
+	line-height: 0;
+	margin-bottom: 30px;
+}
+
+.banner-style-one .banner-logo {
+	display: block;
+	width: 100%;
+	max-width: 340px;
+	height: auto;
+	filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
+}
+
+@media (max-width: 767px) {
+	.banner-style-one .banner-logo {
+		max-width: 220px;
+		margin: 0 auto;
+	}
+}
+
 /* Desenfoque solo del lado izquierdo de la foto (donde va el texto),
    que se desvanece hacia la derecha. Queda debajo de la capa oscura. */
 .banner-style-one .swiper-slide {

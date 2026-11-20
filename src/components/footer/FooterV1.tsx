@@ -16,14 +16,6 @@ const FooterV1 = () => {
                                 <p>
                                     Cocina artesanal a la leña para tus eventos: pizzas, chivitos, asado y mucho más.
                                 </p>
-                                <ul className="opening-list">
-                                    <li>
-                                        Jueves a Domingo <span className="text-end">19:30 - 23:30</span>
-                                    </li>
-                                    <li>
-                                        Take Away <span className="text-end">10% descuento</span>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
 
@@ -40,9 +32,6 @@ const FooterV1 = () => {
                                     </li>
                                     <li>
                                         <Link to="/eventos">Eventos</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/delivery">Delivery</Link>
                                     </li>
                                     <li>
                                         <Link to="/nosotros">Nosotros</Link>
@@ -69,7 +58,7 @@ const FooterV1 = () => {
                                             <i className="fab fa-whatsapp" />
                                         </div>
                                         <div className="content">
-                                            Eventos: <a href="tel:+59898314477">098 314 477</a> <br /> Delivery: <a href="tel:+59894610637">094 610 637</a>
+                                            Eventos: <a href="tel:+59898314477">098 314 477</a>
                                         </div>
                                     </li>
                                     <li>

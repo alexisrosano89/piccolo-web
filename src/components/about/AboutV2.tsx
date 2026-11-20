@@ -29,10 +29,10 @@ const AboutV2 = () => {
                                         </ul>
                                     </li>
                                     <li data-aos="fade-up">
-                                        <h4>Delivery</h4>
+                                        <h4>Zonas</h4>
                                         <ul>
-                                            <li>Jueves a domingo</li>
-                                            <li>De 19:30 a 23:30</li>
+                                            <li>Montevideo, Canelones y Maldonado</li>
+                                            <li>Traslado sin costo en Montevideo y Ciudad de la Costa</li>
                                         </ul>
                                     </li>
                                 </ul>

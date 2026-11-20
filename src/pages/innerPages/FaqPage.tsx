@@ -7,7 +7,7 @@ const FaqPage = () => {
         <>
             <Seo
                 title="Preguntas Frecuentes"
-                description="Cómo reservar la fecha, mínimo de invitados, descuentos por cantidad, formas de pago, cancelación, qué incluye el servicio, zonas, delivery y take away."
+                description="Cómo reservar la fecha, mínimo de invitados, descuentos por cantidad, formas de pago, cancelación, qué incluye el servicio y zonas donde trabajamos."
                 path="/preguntas-frecuentes"
             />
             <LayoutV5 title="Preguntas Frecuentes" breadCrumb="Preguntas frecuentes">

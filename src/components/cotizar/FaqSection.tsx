@@ -115,23 +115,6 @@ const grupos: { titulo: string; preguntas: Pregunta[] }[] = [
             },
         ],
     },
-    {
-        titulo: "Delivery y take away",
-        preguntas: [
-            {
-                pregunta: "¿Hacen delivery? ¿En qué horario?",
-                respuesta: [
-                    "Sí: tortillas de papas y boniatos, gramajo, pizzas y calzones con masa de fermentación lenta. Atendemos de jueves a domingo de 19:30 a 23:30. Hacé tu pedido por WhatsApp al 094 610 637.",
-                ],
-            },
-            {
-                pregunta: "¿Puedo retirar mi pedido en el local?",
-                respuesta: [
-                    "Sí, en Cielo Azul 5611 esquina Rambla, Shangrilá. Retirando en el local (take away) tenés 10% de descuento.",
-                ],
-            },
-        ],
-    },
 ];
 
 /** Ficha "FAQPage" para Google, con las mismas preguntas y respuestas que se ven en pantalla. */

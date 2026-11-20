@@ -20,11 +20,6 @@ const HeaderTopV1 = ({ sectionClass }: DataType) => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="tel:+59894610637">
-                                        <i className="fas fa-motorcycle" /> DELIVERY: 094 610 637
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="mailto:info@piccolo.com.uy">
                                         <img src={icon11} alt="Icon" /> INFO@PICCOLO.COM.UY
                                     </a>

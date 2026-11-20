@@ -11,7 +11,7 @@ const clasicaItems = "Guacamole, alioli de remolacha, queso cuartirolo, queso co
 
 const gourmetItems = "Tostaditas, guacamole, alioli de remolacha, queso camembert, queso roquefort, queso colonia, bondiola, mortadela, longaniza, brochettes capresse, aceitunas negras y frutos secos.";
 
-const WHATSAPP_LINK = "https://wa.me/59894610637";
+const WHATSAPP_LINK = "https://wa.me/59898314477"; // WhatsApp de eventos
 
 const TablasSection = ({ sectionClass }: DataType) => {
     return (

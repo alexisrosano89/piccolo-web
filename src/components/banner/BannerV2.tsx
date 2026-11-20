@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import logoBlanco from "/assets/img/logo-piccolo-blanco.png";
 
 const BannerV2 = () => {
 
@@ -20,7 +21,7 @@ const BannerV2 = () => {
             <div ref={bannerRef} className="banner-area banner-style-one navigation-circle overflow-hidden text-light">
                 <Swiper
                     direction={"horizontal"}
-                    loop={true}
+                    loop={false} // un solo slide (se quitó el de delivery)
                     speed={1200}
                     autoplay={{
                         delay: 5000,
@@ -51,7 +52,9 @@ const BannerV2 = () => {
                                 <div className="content">
                                     <div className="row align-center">
                                         <div className="col-xl-7 col-lg-9">
-                                            <h2>Eventos</h2>
+                                            <h2 className="banner-logo-title">
+                                                <img src={logoBlanco} alt="Piccolo Cocina Artesanal" className="banner-logo" />
+                                            </h2>
                                             <p>
                                                 Llevate los aplausos en tu evento con nuestra rica cocina y buena energía. Cambiamos tu estrés por relax. Ya no tenés que estar en todo para relajarte.
                                             </p>
@@ -63,32 +66,6 @@ const BannerV2 = () => {
                                 </div>
                             </div>
                         </SwiperSlide>
-
-                        {/* Single Item */}
-                        <SwiperSlide className="bg-cover shadow dark" style={{ backgroundImage: 'url(/assets/img/banner/delivery.png)' }}>
-                            <div className="banner-bg-blur" />
-                            <div className="container">
-                                <div className="content">
-                                    <div className="row align-center">
-                                        <div className="col-xl-7 col-lg-9">
-                                            <h2>Delivery</h2>
-                                            <p>
-                                                Tortillas de papas y boniatos, gramajo Piccolo, pizzas y calzones con masa de fermentación lenta.
-                                            </p>
-                                            <div className="button mt-40">
-                                                <Link className="btn btn-theme btn-md animation" to="/delivery">Ver Más <i className="fas fa-motorcycle" /></Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    </div>
-
-                    {/* Navigation */}
-                    <div className="swiper-nav-left">
-                        <div className="swiper-button-prev" />
-                        <div className="swiper-button-next" />
                     </div>
                 </Swiper>
 

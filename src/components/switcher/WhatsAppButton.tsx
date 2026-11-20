@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
-import pedidosYaIcon from "/assets/img/social/pedidosya.png";
 
-const WHATSAPP_NUMBER = "59894610637";
+const WHATSAPP_NUMBER = "59898314477"; // WhatsApp de eventos
 
 const WhatsAppButton = () => {
     return (
         <>
-            <Link
-                to="#"
-                className="pedidosya-float-btn"
-                aria-label="PedidosYa"
-            >
-                <img src={pedidosYaIcon} alt="PedidosYa" />
-            </Link>
             <Link
                 to={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"

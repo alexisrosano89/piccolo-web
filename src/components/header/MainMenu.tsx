@@ -79,9 +79,6 @@ const MainMenu: React.FC<DataType> = ({ navbarPlacement, toggleSubMenu, onNaviga
                     <Link to="/eventos">Eventos</Link>
                 </li>
                 <li>
-                    <Link to="/delivery">Delivery</Link>
-                </li>
-                <li>
                     <Link to="/nosotros">Nosotros</Link>
                 </li>
                 <li>

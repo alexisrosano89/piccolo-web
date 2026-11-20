@@ -13,7 +13,7 @@ const Home6Page = () => {
     return (
         <>
             <Seo
-                description="Catering artesanal para eventos en Montevideo, Canelones y Maldonado: pizzas a la leña, chivitos, asado y más, con personal incluido. También delivery. Pedí tu presupuesto online."
+                description="Catering artesanal para eventos en Montevideo, Canelones y Maldonado: pizzas a la leña, chivitos, asado y más, con personal incluido. Pedí tu presupuesto online."
                 path="/"
             />
             <HeaderV3 />

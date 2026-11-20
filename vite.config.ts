@@ -18,7 +18,6 @@ const SITEMAP_PATHS = [
   '/',
   '/cotizar',
   '/eventos',
-  '/delivery',
   '/nosotros',
   '/preguntas-frecuentes',
   ...FoodMenuData.map(food => `/cotizar/${slugify(food.title)}`),

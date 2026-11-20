@@ -96,7 +96,7 @@ const SidebarInfo: React.FC<HeaderSearchProps> = ({ closeInfoBar, isInfoOpen }) 
                         <img src={logoLight2} alt="Logo" />
                     </div>
                     <p>
-                        Cocina artesanal a la leña para tus eventos: pizzas, chivitos, asado y mucho más. También hacemos delivery de jueves a domingo.
+                        Cocina artesanal a la leña para tus eventos: pizzas, chivitos, asado y mucho más.
                     </p>
                 </div>
                 <div className="widget address">
